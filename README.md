@@ -5,6 +5,7 @@ webcdoc is a parser that turns JSDoc-style comments in `.webc` files into JSON d
 ## Layout
 
 - [`packages/webcdoc`](packages/webcdoc): `@allons-y/webcdoc`, the parser, the `webcdoc` CLI, and a Custom Elements Manifest adapter.
+- [`packages/webcdoc-schema`](packages/webcdoc-schema): `@allons-y/webcdoc-schema`, the TypeScript types and JSON Schema for the JSON the parser writes.
 - [`plugins/cem-plugin-webc`](plugins/cem-plugin-webc): `@allons-y/cem-plugin-webc`, a Custom Elements Manifest analyzer plugin for WebC components.
 - [`site`](site): the Eleventy documentation site, private and not published to npm.
 

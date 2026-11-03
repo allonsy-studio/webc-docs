@@ -1,0 +1,33 @@
+{
+  "name": "@allons-y/webcdoc-schema",
+  "version": "1.0.0-beta.0",
+  "description": "TypeScript types and JSON Schema for the JSON that @allons-y/webcdoc produces.",
+  "license": "MPL-2.0",
+  "author": "Cassondra Roberts <1840295+castastrophe@users.noreply.github.com> (https://allons-y.studio)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allonsy-studio/webc-docs.git",
+    "directory": "packages/webcdoc-schema"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./schema.json": "./schema.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "schema.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "ci": "yarn build",
+    "test": "vitest run --passWithNoTests"
+  }
+}

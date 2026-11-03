@@ -1,0 +1,661 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://allons-y.studio/schemas/webcdoc/1.0.0.json",
+  "title": "webcdoc document",
+  "description": "The grouped document @allons-y/webcdoc writes.",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "string"
+    },
+    "generator": {
+      "type": "string"
+    },
+    "package": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "readme": {
+      "type": "string"
+    },
+    "helpers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/component"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/packageWarning"
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "generator",
+    "package",
+    "helpers",
+    "components",
+    "warnings"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "type": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "named": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "description"
+      ]
+    },
+    "prop": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "attribute": {
+          "type": "string"
+        },
+        "property": {
+          "type": "string"
+        },
+        "type": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "text"
+          ],
+          "additionalProperties": false
+        },
+        "default": {
+          "type": "string"
+        },
+        "optional": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "attribute",
+        "property",
+        "optional",
+        "description"
+      ]
+    },
+    "attr": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "text"
+          ],
+          "additionalProperties": false
+        },
+        "default": {
+          "type": "string"
+        },
+        "optional": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "optional",
+        "description"
+      ]
+    },
+    "slot": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "hasFallback": {
+          "type": "boolean"
+        },
+        "source": {
+          "const": "template"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "description",
+        "hasFallback",
+        "source"
+      ]
+    },
+    "cssProperty": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "syntax": {
+          "type": "string"
+        },
+        "default": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "description"
+      ]
+    },
+    "event": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "text"
+          ],
+          "additionalProperties": false
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "description"
+      ]
+    },
+    "example": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "code"
+      ]
+    },
+    "demo": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "url",
+        "description"
+      ]
+    },
+    "warning": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "enum": [
+            "slot-missing",
+            "default-slot-fallback",
+            "prop-undocumented",
+            "regular-comment",
+            "host-no-display"
+          ]
+        },
+        "message": {
+          "type": "string"
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message",
+        "line"
+      ]
+    },
+    "packageWarning": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "const": "duplicate-tag"
+        },
+        "message": {
+          "type": "string"
+        },
+        "paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message",
+        "paths"
+      ]
+    },
+    "reference": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "in": {
+          "enum": [
+            "template",
+            "setup"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "line",
+        "in"
+      ]
+    },
+    "references": {
+      "type": "object",
+      "properties": {
+        "props": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          }
+        },
+        "setup": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          }
+        },
+        "loops": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          }
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          }
+        },
+        "helpers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          }
+        },
+        "unresolved": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          }
+        },
+        "webc": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "props",
+        "setup",
+        "loops",
+        "data",
+        "helpers",
+        "unresolved",
+        "webc"
+      ]
+    },
+    "webc": {
+      "type": "object",
+      "properties": {
+        "host": {
+          "type": "object",
+          "properties": {
+            "rendered": {
+              "type": "boolean"
+            },
+            "reason": {
+              "enum": [
+                "root",
+                "root-override",
+                "style",
+                "script",
+                "stylesheet",
+                "shadow-dom",
+                "none"
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "rendered",
+            "reason"
+          ]
+        },
+        "setup": {
+          "type": "object",
+          "properties": {
+            "exports": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "enum": [
+                      "function",
+                      "class",
+                      "variable"
+                    ]
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "name",
+                  "kind",
+                  "description"
+                ]
+              }
+            },
+            "imports": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "exports",
+            "imports"
+          ]
+        },
+        "styles": {
+          "type": "object",
+          "properties": {
+            "present": {
+              "type": "boolean"
+            },
+            "scope": {
+              "enum": [
+                "webc:scoped",
+                null
+              ]
+            },
+            "hash": {
+              "type": "string"
+            },
+            "keep": {
+              "type": "boolean"
+            },
+            "bucket": {
+              "type": "string"
+            },
+            "nobundle": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "present",
+            "scope"
+          ]
+        },
+        "clientScript": {
+          "type": "boolean"
+        },
+        "imports": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "uses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "shadowDom": {
+          "type": "boolean"
+        },
+        "transforms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "references": {
+          "$ref": "#/$defs/references"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "host",
+        "setup",
+        "styles",
+        "clientScript",
+        "imports",
+        "uses",
+        "shadowDom",
+        "transforms",
+        "references"
+      ]
+    },
+    "component": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "tagName": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "props": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/prop"
+          }
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/attr"
+          }
+        },
+        "slots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/slot"
+          }
+        },
+        "cssProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/cssProperty"
+          }
+        },
+        "cssParts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/named"
+          }
+        },
+        "cssStates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/named"
+          }
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/event"
+          }
+        },
+        "examples": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/example"
+          }
+        },
+        "demos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/demo"
+          }
+        },
+        "deprecated": {
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/named"
+            }
+          }
+        },
+        "webc": {
+          "$ref": "#/$defs/webc"
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/warning"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "tagName",
+        "summary",
+        "description",
+        "props",
+        "attributes",
+        "slots",
+        "cssProperties",
+        "cssParts",
+        "cssStates",
+        "events",
+        "examples",
+        "demos",
+        "deprecated",
+        "tags",
+        "webc",
+        "warnings"
+      ]
+    }
+  }
+}
