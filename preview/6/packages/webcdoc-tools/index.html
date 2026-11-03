@@ -6,8 +6,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>@layer norn.reset, norn.base, norn.layout, norn.components, norn.oss, norn.print;</style>
-<title>norn-side-nav: webc-docs</title>
-
+<title>@allons-y/webcdoc-tools: webc-docs</title>
+<meta name="description" content="Pure helpers for reading, filtering, and ordering the components in a webcdoc document">
 <link rel="canonical" href="https://projects.allons-y.studio/webc-docs/">
 <meta name="color-scheme" content="light dark">
 
@@ -16,7 +16,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="webc-docs: Documentation metadata for WebC components, from the comments already in the file">
-
+<meta property="og:description" content="Pure helpers for reading, filtering, and ordering the components in a webcdoc document">
 <meta property="og:url" content="https://projects.allons-y.studio/webc-docs/">
 
 
@@ -54,9 +54,9 @@
 			</a>
 	<details>
 		<summary>Menu</summary>
-		<nav aria-labelledby="norn-header-webc-ZhcOa"><span data-label="" id="norn-header-webc-ZhcOa">Primary</span>
+		<nav aria-labelledby="norn-header-webc-h5biq"><span data-label="" id="norn-header-webc-h5biq">Primary</span>
 			
-			<a href="/webc-docs/preview/6/components/"><norn-icon>
+			<a href="/webc-docs/preview/6/packages/webcdoc-schema/"><norn-icon>
 <svg viewBox="0 0 24 24" aria-hidden="true">
 	<path d="M2 5h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 5h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"></path>
 </svg>
@@ -73,12 +73,12 @@
 <norn-sidebar-layout><div>
 	<details>
 		<summary><span>Documentation</span></summary>
-		<norn-side-nav><nav aria-labelledby="norn-side-nav-webc-R7yUD">
-	<span data-label="" id="norn-side-nav-webc-R7yUD"><span>Documentation</span></span>
-	<norn-search><search aria-labelledby="norn-search-webc-1XI8Q" data-bundle="/webc-docs/preview/6/pagefind/pagefind.js">
+		<norn-side-nav><nav aria-labelledby="norn-side-nav-webc-YbRxq">
+	<span data-label="" id="norn-side-nav-webc-YbRxq"><span>Documentation</span></span>
+	<norn-search><search aria-labelledby="norn-search-webc-yx1MC" data-bundle="/webc-docs/preview/6/pagefind/pagefind.js">
 	<form action="https://duckduckgo.com/" method="get">
 		<label>
-			<span id="norn-search-webc-1XI8Q"><span>Search the docs</span></span>
+			<span id="norn-search-webc-yx1MC"><span>Search the docs</span></span>
 			<norn-icon>
 <svg viewBox="0 0 24 24" aria-hidden="true">
 	<path d="M18 11a7 7 0 1 1-14 0a7 7 0 1 1 14 0M21 21l-5-5"></path>
@@ -114,15 +114,11 @@
 </norn-search>
 	<ul>
 		<li>
-			<a href="/webc-docs/preview/6/components/"><span>Components</span></a>
+			<a href="/webc-docs/preview/6/packages/webcdoc-schema/"><span>@allons-y/webcdoc-schema</span></a>
 			
 		</li>
 <li>
-			<a href="/webc-docs/preview/6/components/norn-accordion/"><span>norn-accordion</span></a>
-			
-		</li>
-<li>
-			<a href="/webc-docs/preview/6/plugins/"><span>Plugins</span></a>
+			<a href="/webc-docs/preview/6/comment-format/"><span>Comment format</span></a>
 			
 		</li>
 	</ul>
@@ -133,69 +129,100 @@
 	<article>
 	
 	
-	<h1>norn-side-nav</h1>
+	<h1>@allons-y/webcdoc-tools</h1>
 	
 	<norn-rich-text data-measure="none" data-pagefind-body="">
-<p>/*
-SPDX-License-Identifier: MPL-2.0
-This Source Code Form is subject to the terms of the Mozilla Public
-License, v. 2.0. If a copy of the MPL was not distributed with this
-file, You can obtain one at https://mozilla.org/MPL/2.0/.
-/</p>
-
-<p class="requires">
-  Requires:
-  <span><span>data</span> <code>page</code>.</span>
-<span><span>data</span> <code>page.url</code>.</span>
-<span><span>helper</span> <code>nornComponentStrings</code>.</span>
-<span><span>undocumented</span> <code>uid</code>.</span>
-<span><span>undocumented</span> <code>items</code>.</span>
+<p>
+  Published on npm as <a href="https://www.npmjs.com/package/@allons-y/webcdoc-tools">@allons-y/webcdoc-tools</a> at version <code>0.1.0-beta.0</code>.
+  The source is in <a href="https://github.com/allonsy-studio/webc-docs/tree/main/packages/webcdoc-tools">its folder on GitHub</a>.
 </p>
+<div class="readme"><p>Pure helpers for reading, filtering, and ordering the components in a webcdoc document. They take the JSON that <code>@allons-y/webcdoc</code> writes and return answers, with no I/O.</p>
+<p>Status: pre-release (<code>0.1.0-beta.0</code>).</p>
+<h2>Install</h2>
+<pre><code class="language-sh">npm install --save-dev @allons-y/webcdoc-tools
+</code></pre>
+<h2>Usage</h2>
+<pre><code class="language-js">import { readFile } from "node:fs/promises";
+import {
+  componentsUsing,
+  dependenciesOf,
+  getComponent,
+  hostRequirements,
+  isPortable,
+  topologicalOrder,
+} from "@allons-y/webcdoc-tools";
 
+const doc = JSON.parse(await readFile("webcdoc.json", "utf8"));
 
-
-<h2>Props</h2>
-
-<p>No props are documented.</p>
-
-<h2>Slots</h2>
+getComponent(doc, "app-nav");              // the record for &lt;app-nav&gt;, or undefined
+dependenciesOf(doc, "app-shell", { transitive: true });
+topologicalOrder(doc);                     // used components first; throws on a cycle
+hostRequirements(doc);                     // every data path and helper, with its users
+componentsUsing(doc, "site.title");        // tag names that read that data
+doc.components.filter(isPortable);         // components that need nothing from the host
+</code></pre>
+<h3>Predicates</h3>
+<p>Each takes one component record.</p>
 <table>
-  <thead>
-    <tr><th scope="col">Slot</th><th scope="col">Description</th><th scope="col">Fallback</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>label</code></td>
-      <td></td>
-      <td>Yes</td>
-    </tr>
+<thead>
 <tr>
-      <td><code>search</code></td>
-      <td></td>
-      <td>No</td>
-    </tr>
-  </tbody>
+<th>Function</th>
+<th>True when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isDocumented(record)</code></td>
+<td>It has a summary or description, or a prop or slot with text.</td>
+</tr>
+<tr>
+<td><code>hasClientScript(record)</code></td>
+<td>It ships a client script that may define a custom element.</td>
+</tr>
+<tr>
+<td><code>rendersHostTag(record)</code></td>
+<td>WebC keeps the host tag in the output.</td>
+</tr>
+<tr>
+<td><code>isPortable(record)</code></td>
+<td>It reads no page data, helpers, or unresolved names.</td>
+</tr>
+<tr>
+<td><code>hasWarning(record, code)</code></td>
+<td>It raised a warning with that code.</td>
+</tr>
+<tr>
+<td><code>isDeprecated(record)</code></td>
+<td>It is marked deprecated, with or without a reason.</td>
+</tr>
+</tbody>
 </table>
-
-
-<h2>CSS custom properties</h2>
-
-<p>No CSS custom properties are documented.</p>
-
-<h2>CSS parts</h2>
-
-<p>No CSS parts are documented.</p>
-
-<h2>Examples</h2>
-
-<p>No examples are documented.</p>
-
-<h2>Warnings</h2>
+<h3>Lookups</h3>
 <ul>
-  <li><code>prop-undocumented</code> line <span>9</span>: <span>"uid" is read in the template but is not a documented prop, setup export, loop variable, or known helper.</span></li>
-<li><code>prop-undocumented</code> line <span>13</span>: <span>"items" is read in the template but is not a documented prop, setup export, loop variable, or known helper.</span></li>
+<li><code>getComponent(doc, tagName)</code> returns the first record with that tag name.</li>
+<li><code>getComponentByPath(doc, path)</code> matches a record path, ignoring a leading <code>./</code> and repeated slashes.</li>
+<li><code>listTagNames(doc)</code> returns each tag name once, in document order.</li>
+<li><code>normalizePath(path)</code> uses forward slashes, drops a leading <code>./</code>, and collapses repeated slashes.</li>
 </ul>
-
+<h3>Use graph</h3>
+<p><code>resolveUses(doc)</code> returns a <code>Map</code> from tag name to <code>{ uses, usedBy, unresolved }</code>. <code>uses</code> comes from the template's custom tags and from <code>webc:import</code> paths. An import path resolves to the record whose path ends with it at a segment boundary. Anything that matches no record in the document, such as a tag from another package, lands in <code>unresolved</code>.</p>
+<ul>
+<li><code>topologicalOrder(doc)</code> returns tag names with every dependency before its users. A cycle throws an error that names it, such as <code>Component cycle: a -&gt; b -&gt; a</code>.</li>
+<li><code>dependenciesOf(doc, tagName, { transitive })</code> lists what a component uses. With <code>transitive: true</code>, it follows every chain and never lists the component itself.</li>
+</ul>
+<h3>Host requirements</h3>
+<ul>
+<li><code>hostRequirements(doc)</code> returns <code>{ kind: "data" | "helper", name, tagNames }</code> for each data path and helper any component reads. Data entries come first, each sorted by name.</li>
+<li><code>componentsUsing(doc, name)</code> returns the tag names that read a data path or helper. A data name also matches longer paths under it, so <code>site</code> finds <code>site.title</code>.</li>
+</ul>
+<h2>Requirements</h2>
+<ul>
+<li>Node 24 or later.</li>
+<li><code>@allons-y/webcdoc-schema</code> provides the types. It is installed with this package.</li>
+</ul>
+<h2>License</h2>
+<p><a href="https://github.com/allonsy-studio/webc-docs/blob/main/LICENSE">MPL-2.0</a>: use freely, modify as needed; changes to MPL-licensed files should be shared back under the same license.</p>
+</div>
 </norn-rich-text>
 
 
@@ -243,14 +270,12 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
 					<p><strong>Project</strong></p>
 					<ul>
 						<li><a href="https://github.com/allonsy-studio/webc-docs">GitHub</a></li>
-<li><a href="https://github.com/allonsy-studio/webc-docs/blob/main/CHANGELOG.md">Changelog</a></li>
 					</ul>
 				</div>
 <div>
 					<p><strong>Help</strong></p>
 					<ul>
 						<li><a href="https://github.com/allonsy-studio/webc-docs/issues">Report an issue</a></li>
-<li><a href="https://github.com/allonsy-studio/webc-docs/blob/main/.github/CONTRIBUTING.md">Contributing guide</a></li>
 <li><a href="https://github.com/allonsy-studio/.github/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
 <li><a href="https://github.com/allonsy-studio/.github/blob/main/SECURITY.md">Security policy</a></li>
 					</ul>

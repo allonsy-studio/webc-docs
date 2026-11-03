@@ -6,8 +6,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>@layer norn.reset, norn.base, norn.layout, norn.components, norn.oss, norn.print;</style>
-<title>norn-accordion: webc-docs</title>
-
+<title>Comment format: webc-docs</title>
+<meta name="description" content="How a WebC component documents itself, with one fully documented example.">
 <link rel="canonical" href="https://projects.allons-y.studio/webc-docs/">
 <meta name="color-scheme" content="light dark">
 
@@ -16,15 +16,15 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="webc-docs: Documentation metadata for WebC components, from the comments already in the file">
-
+<meta property="og:description" content="How a WebC component documents itself, with one fully documented example.">
 <meta property="og:url" content="https://projects.allons-y.studio/webc-docs/">
 
 
 
 <meta name="twitter:card" content="summary">
 
-<link rel="stylesheet" href="/webc-docs/preview/6/bundle/3USGE-lHIl.css">
-<script src="/webc-docs/preview/6/bundle/mVFZCDE4vy.js" defer=""></script>
+<link rel="stylesheet" href="/webc-docs/preview/6/bundle/W0YUWOBYyn.css">
+<script src="/webc-docs/preview/6/bundle/RgVyBfbLzt.js" defer=""></script>
 
 		<meta property="og:site_name" content="webc-docs">
 		<meta property="og:locale" content="en_US">
@@ -54,9 +54,9 @@
 			</a>
 	<details>
 		<summary>Menu</summary>
-		<nav aria-labelledby="norn-header-webc-xtMSx"><span data-label="" id="norn-header-webc-xtMSx">Primary</span>
+		<nav aria-labelledby="norn-header-webc-Yjmgz"><span data-label="" id="norn-header-webc-Yjmgz">Primary</span>
 			
-			<a href="/webc-docs/preview/6/components/"><norn-icon>
+			<a href="/webc-docs/preview/6/packages/webcdoc-schema/"><norn-icon>
 <svg viewBox="0 0 24 24" aria-hidden="true">
 	<path d="M2 5h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 5h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"></path>
 </svg>
@@ -73,12 +73,12 @@
 <norn-sidebar-layout><div>
 	<details>
 		<summary><span>Documentation</span></summary>
-		<norn-side-nav><nav aria-labelledby="norn-side-nav-webc-t2_iq">
-	<span data-label="" id="norn-side-nav-webc-t2_iq"><span>Documentation</span></span>
-	<norn-search><search aria-labelledby="norn-search-webc-RR1V4" data-bundle="/webc-docs/preview/6/pagefind/pagefind.js">
+		<norn-side-nav><nav aria-labelledby="norn-side-nav-webc-YipZs">
+	<span data-label="" id="norn-side-nav-webc-YipZs"><span>Documentation</span></span>
+	<norn-search><search aria-labelledby="norn-search-webc-vdnBP" data-bundle="/webc-docs/preview/6/pagefind/pagefind.js">
 	<form action="https://duckduckgo.com/" method="get">
 		<label>
-			<span id="norn-search-webc-RR1V4"><span>Search the docs</span></span>
+			<span id="norn-search-webc-vdnBP"><span>Search the docs</span></span>
 			<norn-icon>
 <svg viewBox="0 0 24 24" aria-hidden="true">
 	<path d="M18 11a7 7 0 1 1-14 0a7 7 0 1 1 14 0M21 21l-5-5"></path>
@@ -114,15 +114,11 @@
 </norn-search>
 	<ul>
 		<li>
-			<a href="/webc-docs/preview/6/components/"><span>Components</span></a>
+			<a href="/webc-docs/preview/6/packages/webcdoc-schema/"><span>@allons-y/webcdoc-schema</span></a>
 			
 		</li>
 <li>
-			<a href="/webc-docs/preview/6/components/norn-accordion/" aria-current="page"><span>norn-accordion</span></a>
-			
-		</li>
-<li>
-			<a href="/webc-docs/preview/6/plugins/"><span>Plugins</span></a>
+			<a href="/webc-docs/preview/6/comment-format/" aria-current="page"><span>Comment format</span></a>
 			
 		</li>
 	</ul>
@@ -133,73 +129,436 @@
 	<article>
 	
 	
-	<h1>norn-accordion</h1>
+	<h1>Comment format</h1>
 	
-	<norn-rich-text data-measure="none" data-pagefind-body="">
-<p>/*
-SPDX-License-Identifier: MPL-2.0
-This Source Code Form is subject to the terms of the Mozilla Public
-License, v. 2.0. If a copy of the MPL was not distributed with this
-file, You can obtain one at https://mozilla.org/MPL/2.0/.
-/</p>
+	<norn-rich-text data-measure="none" data-pagefind-body=""><p>
+  webcdoc reads a server-only comment at the top of a <code>.webc</code> file, or next to the element it describes. The example below is <code>_components/skip-link.webc</code> in this repository, and the record after it is what the plugin wrote for that file.
+</p>
+
+<h2>The source</h2>
+<norn-code-block>
+<figure>
+	<figcaption>_components/skip-link.webc</figcaption>
+	<norn-copy-button>
+<button type="button" hidden="" data-value="<!---
+A link to the main content region, placed first in the page.
+
+@summary Skip-to-content link.
+@prop {string} [label=Skip to content] - Visible text of the link.
+@prop {string} [target=#main] - Id of the region to jump to.
+@prop {boolean} [sticky=false] - Keep the link visible once focused.
+@cssprop {<color>} [--skip-link-bg=CanvasText] - Background when focused.
+@example Default
+<skip-link></skip-link>
+@example Custom target
+<skip-link @target=&quot;#content&quot; @label=&quot;Jump to article&quot;></skip-link>
+@since 0.2.0
+--->
+<script webc:setup>
+  /** Normalize a WebC boolean prop (&quot;&quot;, &quot;true&quot;, true all mean on). */
+  const isOn = (v) => v === true || v === '' || v === 'true';
+</script>
+<a :href=&quot;target&quot; :class=&quot;isOn(sticky) ? 'is-sticky' : ''&quot; @text=&quot;label&quot;></a>
+<!--- @slot icon - Decorative icon shown before the label. --->
+<slot name=&quot;icon&quot;></slot>
+<style webc:scoped>
+  /** @csspart link - The anchor element, for consumers styling it from outside. */
+  :host a:focus { background: var(--skip-link-bg); }
+</style>
+" data-strings="norn-code-block-webc-c5_JI" data-compact="" data-surface="code"><span data-icons=""><norn-icon>
+<svg viewBox="0 0 24 24" aria-hidden="true">
+	<path d="M9 9h11v11H9zM15 9V4H4v11h5"></path>
+</svg>
 
 
-
-<p>Requires nothing from the host.</p>
-
-<h2>Props</h2>
-
-<p>No props are documented.</p>
-
-<h2>Slots</h2>
-<table>
-  <thead>
-    <tr><th scope="col">Slot</th><th scope="col">Description</th><th scope="col">Fallback</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>default</code></td>
-      <td></td>
-      <td>No</td>
-    </tr>
-  </tbody>
-</table>
+</norn-icon><norn-icon>
+<svg viewBox="0 0 24 24" aria-hidden="true">
+	<path d="M5 12l5 5L20 7"></path>
+</svg>
 
 
-<h2>CSS custom properties</h2>
+</norn-icon></span><span data-label=""></span></button>
+<span role="status"></span>
 
-<p>No CSS custom properties are documented.</p>
 
-<h2>CSS parts</h2>
+</norn-copy-button>
+	<pre dir="ltr" data-language="html"><code data-tokens="[[&quot;comment&quot;,&quot;punctuation&quot;,&quot;keyword&quot;,&quot;function&quot;,&quot;number&quot;,&quot;string&quot;],[0,0,5,0,1,60,0,2,30,0,1,66,0,1,60,0,1,68,0,1,73,0,1,16,0,1,23,0,1,22,0,1,67,0,1,12,0,1,4,1,1,1,2,0,6,3,1,10,1,0,1,0,3,68,2,3,5,3,1,4,1,1,1,1,1,1,1,1,1,2,1,2,1,3,3,4,1,4,1,1,2,1,3,3,5,1,2,1,1,2,1,3,3,5,1,6,1,0,1,1,1,2,2,0,6,1,0,1,1,1,1,2,0,1,3,1,5,1,0,1,5,0,8,3,1,6,1,0,1,5,0,33,3,1,5,1,0,1,5,0,7,1,0,3,2,0,1,1,0,1,0,1,63,1,1,1,2,0,4,3,1,4,1,0,1,5,0,6,1,0,3,2,0,4,1,0,1,1,1,1,2,0,5,3,1,11,1,0,1,0,3,81,1,3,1,3,0,4,2,1,1,1,0,1,3,0,5,1,1,1,3,1,10,1,0,1,3,1,3,1,0,1,1,14,2,1,1,1,1,1,2,2,0,5,1,0,1]]">&lt;!---
+A link to the main content region, placed first in the page.
 
-<p>No CSS parts are documented.</p>
+@summary Skip-to-content link.
+@prop {string} [label=Skip to content] - Visible text of the link.
+@prop {string} [target=#main] - Id of the region to jump to.
+@prop {boolean} [sticky=false] - Keep the link visible once focused.
+@cssprop {&lt;color&gt;} [--skip-link-bg=CanvasText] - Background when focused.
+@example Default
+&lt;skip-link&gt;&lt;/skip-link&gt;
+@example Custom target
+&lt;skip-link @target="#content" @label="Jump to article"&gt;&lt;/skip-link&gt;
+@since 0.2.0
+---&gt;
+&lt;script webc:setup&gt;
+  /** Normalize a WebC boolean prop ("", "true", true all mean on). */
+  const isOn = (v) =&gt; v === true || v === '' || v === 'true';
+&lt;/script&gt;
+&lt;a :href="target" :class="isOn(sticky) ? 'is-sticky' : ''" @text="label"&gt;&lt;/a&gt;
+&lt;!--- @slot icon - Decorative icon shown before the label. ---&gt;
+&lt;slot name="icon"&gt;&lt;/slot&gt;
+&lt;style webc:scoped&gt;
+  /** @csspart link - The anchor element, for consumers styling it from outside. */
+  :host a:focus { background: var(--skip-link-bg); }
+&lt;/style&gt;
+</code></pre>
+	<span hidden="" id="norn-code-block-webc-c5_JI">
+		<span data-string="label" id="norn-code-block-webc-c5_JI-copy">Copy {name} to clipboard</span>
+		<span data-string="copy">Copy</span>
+		<span data-string="copied">Copied</span>
+		<span data-string="failed">Copy failed</span>
+	</span>
+	<span data-name="" hidden=""><span data-default="">html code</span></span>
+</figure>
 
-<h2>Examples</h2>
 
-<p>No examples are documented.</p>
+</norn-code-block>
 
-<h2>Warnings</h2>
+<h2>The record</h2>
+<p>The plugin reads the comments and the template together. Each field comes from one of three places: the header comment, a comment next to the element it describes, or the template itself.</p>
+<ul>
+  <li><code>summary</code> and <code>description</code> come from <code>@summary</code> and the text before the tags.</li>
+  <li><code>props</code> come from <code>@prop</code>, with the attribute name as written and the property name camel-cased.</li>
+  <li><code>slots</code> come from the <code>&lt;slot&gt;</code> elements in the template, and their descriptions from the comment before each one.</li>
+  <li><code>cssProperties</code> come from <code>@cssprop</code>, and <code>cssParts</code> from <code>@csspart</code> in the style block.</li>
+  <li><code>examples</code> come from each <code>@example</code>, and <code>webc.references</code> lists what the template reads from the host.</li>
+</ul>
+<norn-code-block>
+<figure>
+	<figcaption>The webcdoc record for skip-link</figcaption>
+	<norn-copy-button>
+<button type="button" hidden="" data-value='{
+  "path": "_components/skip-link.webc",
+  "tagName": "skip-link",
+  "summary": "Skip-to-content link.",
+  "description": "A link to the main content region, placed first in the page.",
+  "props": [
+    {
+      "name": "label",
+      "attribute": "@label",
+      "property": "label",
+      "type": {
+        "text": "string"
+      },
+      "default": "Skip to content",
+      "optional": true,
+      "description": "Visible text of the link."
+    },
+    {
+      "name": "target",
+      "attribute": "@target",
+      "property": "target",
+      "type": {
+        "text": "string"
+      },
+      "default": "#main",
+      "optional": true,
+      "description": "Id of the region to jump to."
+    },
+    {
+      "name": "sticky",
+      "attribute": "@sticky",
+      "property": "sticky",
+      "type": {
+        "text": "boolean"
+      },
+      "default": "false",
+      "optional": true,
+      "description": "Keep the link visible once focused."
+    }
+  ],
+  "attributes": [],
+  "slots": [
+    {
+      "name": "icon",
+      "description": "Decorative icon shown before the label.",
+      "hasFallback": false,
+      "source": "template"
+    }
+  ],
+  "cssProperties": [
+    {
+      "name": "--skip-link-bg",
+      "description": "Background when focused.",
+      "syntax": "<color>",
+      "default": "CanvasText"
+    }
+  ],
+  "cssParts": [
+    {
+      "name": "link",
+      "description": "The anchor element, for consumers styling it from outside."
+    }
+  ],
+  "cssStates": [],
+  "events": [],
+  "examples": [
+    {
+      "title": "Default",
+      "code": "<skip-link></skip-link>"
+    },
+    {
+      "title": "Custom target",
+      "code": "<skip-link @target=\"#content\" @label=\"Jump to article\"></skip-link>"
+    }
+  ],
+  "demos": [],
+  "deprecated": false,
+  "tags": {
+    "since": [
+      {
+        "name": "0.2.0",
+        "description": ""
+      }
+    ]
+  },
+  "webc": {
+    "host": {
+      "rendered": true,
+      "reason": "style"
+    },
+    "setup": {
+      "exports": [
+        {
+          "name": "isOn",
+          "kind": "function",
+          "description": "Normalize a WebC boolean prop (\"\", \"true\", true all mean on)."
+        }
+      ],
+      "imports": []
+    },
+    "styles": {
+      "present": true,
+      "scope": "webc:scoped"
+    },
+    "clientScript": false,
+    "imports": [],
+    "uses": [],
+    "shadowDom": false,
+    "transforms": [],
+    "references": {
+      "props": [
+        {
+          "name": "target",
+          "line": 19,
+          "in": "template"
+        },
+        {
+          "name": "sticky",
+          "line": 19,
+          "in": "template"
+        },
+        {
+          "name": "label",
+          "line": 19,
+          "in": "template"
+        }
+      ],
+      "setup": [
+        {
+          "name": "isOn",
+          "line": 19,
+          "in": "template"
+        }
+      ],
+      "loops": [],
+      "data": [],
+      "helpers": [],
+      "unresolved": [],
+      "webc": []
+    }
+  },
+  "warnings": []
+}' data-strings="norn-code-block-webc-CqQNF" data-compact="" data-surface="code"><span data-icons=""><norn-icon>
+<svg viewBox="0 0 24 24" aria-hidden="true">
+	<path d="M9 9h11v11H9zM15 9V4H4v11h5"></path>
+</svg>
 
-<p>This component has no warnings.</p>
+
+</norn-icon><norn-icon>
+<svg viewBox="0 0 24 24" aria-hidden="true">
+	<path d="M5 12l5 5L20 7"></path>
+</svg>
+
+
+</norn-icon></span><span data-label=""></span></button>
+<span role="status"></span>
+
+
+</norn-copy-button>
+	<pre dir="ltr" data-language="json"><code data-tokens="[[&quot;punctuation&quot;,&quot;function&quot;,&quot;string&quot;,&quot;number&quot;],[0,0,1,0,3,1,1,0,4,0,0,2,2,1,28,0,0,1,0,3,1,1,0,7,0,0,2,2,1,11,0,0,1,0,3,1,1,0,7,0,0,2,2,1,23,0,0,1,0,3,1,1,0,11,0,0,2,2,1,62,0,0,1,0,3,1,1,0,5,0,0,2,0,1,1,0,5,1,0,7,1,1,0,4,0,0,2,2,1,7,0,0,1,0,7,1,1,0,9,0,0,2,2,1,8,0,0,1,0,7,1,1,0,8,0,0,2,2,1,7,0,0,1,0,7,1,1,0,4,0,0,2,0,1,1,0,9,1,1,0,4,0,0,2,2,1,8,0,7,2,0,7,1,1,0,7,0,0,2,2,1,17,0,0,1,0,7,1,1,0,8,0,0,2,3,1,4,0,0,1,0,7,1,1,0,11,0,0,2,2,1,27,0,5,2,0,5,1,0,7,1,1,0,4,0,0,2,2,1,8,0,0,1,0,7,1,1,0,9,0,0,2,2,1,9,0,0,1,0,7,1,1,0,8,0,0,2,2,1,8,0,0,1,0,7,1,1,0,4,0,0,2,0,1,1,0,9,1,1,0,4,0,0,2,2,1,8,0,7,2,0,7,1,1,0,7,0,0,2,2,1,7,0,0,1,0,7,1,1,0,8,0,0,2,3,1,4,0,0,1,0,7,1,1,0,11,0,0,2,2,1,30,0,5,2,0,5,1,0,7,1,1,0,4,0,0,2,2,1,8,0,0,1,0,7,1,1,0,9,0,0,2,2,1,9,0,0,1,0,7,1,1,0,8,0,0,2,2,1,8,0,0,1,0,7,1,1,0,4,0,0,2,0,1,1,0,9,1,1,0,4,0,0,2,2,1,9,0,7,2,0,7,1,1,0,7,0,0,2,2,1,7,0,0,1,0,7,1,1,0,8,0,0,2,3,1,4,0,0,1,0,7,1,1,0,11,0,0,2,2,1,37,0,5,1,0,3,2,0,3,1,1,0,10,0,0,2,0,1,3,0,3,1,1,0,5,0,0,2,0,1,1,0,5,1,0,7,1,1,0,4,0,0,2,2,1,6,0,0,1,0,7,1,1,0,11,0,0,2,2,1,41,0,0,1,0,7,1,1,0,11,0,0,2,3,1,5,0,0,1,0,7,1,1,0,6,0,0,2,2,1,10,0,5,1,0,3,2,0,3,1,1,0,13,0,0,2,0,1,1,0,5,1,0,7,1,1,0,4,0,0,2,2,1,16,0,0,1,0,7,1,1,0,11,0,0,2,2,1,26,0,0,1,0,7,1,1,0,6,0,0,2,2,1,9,0,0,1,0,7,1,1,0,7,0,0,2,2,1,12,0,5,1,0,3,2,0,3,1,1,0,8,0,0,2,0,1,1,0,5,1,0,7,1,1,0,4,0,0,2,2,1,6,0,0,1,0,7,1,1,0,11,0,0,2,2,1,60,0,5,1,0,3,2,0,3,1,1,0,9,0,0,2,0,1,3,0,3,1,1,0,6,0,0,2,0,1,3,0,3,1,1,0,8,0,0,2,0,1,1,0,5,1,0,7,1,1,0,5,0,0,2,2,1,9,0,0,1,0,7,1,1,0,4,0,0,2,2,1,25,0,5,2,0,5,1,0,7,1,1,0,5,0,0,2,2,1,15,0,0,1,0,7,1,1,0,4,0,0,2,2,1,73,0,5,1,0,3,2,0,3,1,1,0,5,0,0,2,0,1,3,0,3,1,1,0,10,0,0,2,3,1,5,0,0,1,0,3,1,1,0,4,0,0,2,0,1,1,0,5,1,1,0,5,0,0,2,0,1,1,0,7,1,0,9,1,1,0,4,0,0,2,2,1,7,0,0,1,0,9,1,1,0,11,0,0,2,2,1,2,0,7,1,0,5,1,0,3,2,0,3,1,1,0,4,0,0,2,0,1,1,0,5,1,1,0,4,0,0,2,0,1,1,0,7,1,1,0,8,0,0,2,3,1,4,0,0,1,0,7,1,1,0,6,0,0,2,2,1,7,0,5,2,0,5,1,1,0,5,0,0,2,0,1,1,0,7,1,1,0,7,0,0,2,0,1,1,0,9,1,0,11,1,1,0,4,0,0,2,2,1,6,0,0,1,0,11,1,1,0,4,0,0,2,2,1,10,0,0,1,0,11,1,1,0,11,0,0,2,2,1,67,0,9,1,0,7,2,0,7,1,1,0,7,0,0,2,0,1,2,0,5,2,0,5,1,1,0,6,0,0,2,0,1,1,0,7,1,1,0,7,0,0,2,3,1,4,0,0,1,0,7,1,1,0,5,0,0,2,2,1,13,0,5,2,0,5,1,1,0,12,0,0,2,3,1,5,0,0,1,0,5,1,1,0,7,0,0,2,0,1,3,0,5,1,1,0,4,0,0,2,0,1,3,0,5,1,1,0,9,0,0,2,3,1,5,0,0,1,0,5,1,1,0,10,0,0,2,0,1,3,0,5,1,1,0,10,0,0,2,0,1,1,0,7,1,1,0,5,0,0,2,0,1,1,0,9,1,0,11,1,1,0,4,0,0,2,2,1,8,0,0,1,0,11,1,1,0,4,0,0,2,3,1,2,0,0,1,0,11,1,1,0,2,0,0,2,2,1,10,0,9,2,0,9,1,0,11,1,1,0,4,0,0,2,2,1,8,0,0,1,0,11,1,1,0,4,0,0,2,3,1,2,0,0,1,0,11,1,1,0,2,0,0,2,2,1,10,0,9,2,0,9,1,0,11,1,1,0,4,0,0,2,2,1,7,0,0,1,0,11,1,1,0,4,0,0,2,3,1,2,0,0,1,0,11,1,1,0,2,0,0,2,2,1,10,0,9,1,0,7,2,0,7,1,1,0,5,0,0,2,0,1,1,0,9,1,0,11,1,1,0,4,0,0,2,2,1,6,0,0,1,0,11,1,1,0,4,0,0,2,3,1,2,0,0,1,0,11,1,1,0,2,0,0,2,2,1,10,0,9,1,0,7,2,0,7,1,1,0,5,0,0,2,0,1,3,0,7,1,1,0,4,0,0,2,0,1,3,0,7,1,1,0,7,0,0,2,0,1,3,0,7,1,1,0,10,0,0,2,0,1,3,0,7,1,1,0,4,0,0,2,0,1,2,0,5,1,0,3,2,0,3,1,1,0,8,0,0,2,0,1,2,0,1,1]]">{
+  "path": "_components/skip-link.webc",
+  "tagName": "skip-link",
+  "summary": "Skip-to-content link.",
+  "description": "A link to the main content region, placed first in the page.",
+  "props": [
+    {
+      "name": "label",
+      "attribute": "@label",
+      "property": "label",
+      "type": {
+        "text": "string"
+      },
+      "default": "Skip to content",
+      "optional": true,
+      "description": "Visible text of the link."
+    },
+    {
+      "name": "target",
+      "attribute": "@target",
+      "property": "target",
+      "type": {
+        "text": "string"
+      },
+      "default": "#main",
+      "optional": true,
+      "description": "Id of the region to jump to."
+    },
+    {
+      "name": "sticky",
+      "attribute": "@sticky",
+      "property": "sticky",
+      "type": {
+        "text": "boolean"
+      },
+      "default": "false",
+      "optional": true,
+      "description": "Keep the link visible once focused."
+    }
+  ],
+  "attributes": [],
+  "slots": [
+    {
+      "name": "icon",
+      "description": "Decorative icon shown before the label.",
+      "hasFallback": false,
+      "source": "template"
+    }
+  ],
+  "cssProperties": [
+    {
+      "name": "--skip-link-bg",
+      "description": "Background when focused.",
+      "syntax": "&lt;color&gt;",
+      "default": "CanvasText"
+    }
+  ],
+  "cssParts": [
+    {
+      "name": "link",
+      "description": "The anchor element, for consumers styling it from outside."
+    }
+  ],
+  "cssStates": [],
+  "events": [],
+  "examples": [
+    {
+      "title": "Default",
+      "code": "&lt;skip-link&gt;&lt;/skip-link&gt;"
+    },
+    {
+      "title": "Custom target",
+      "code": "&lt;skip-link @target=\"#content\" @label=\"Jump to article\"&gt;&lt;/skip-link&gt;"
+    }
+  ],
+  "demos": [],
+  "deprecated": false,
+  "tags": {
+    "since": [
+      {
+        "name": "0.2.0",
+        "description": ""
+      }
+    ]
+  },
+  "webc": {
+    "host": {
+      "rendered": true,
+      "reason": "style"
+    },
+    "setup": {
+      "exports": [
+        {
+          "name": "isOn",
+          "kind": "function",
+          "description": "Normalize a WebC boolean prop (\"\", \"true\", true all mean on)."
+        }
+      ],
+      "imports": []
+    },
+    "styles": {
+      "present": true,
+      "scope": "webc:scoped"
+    },
+    "clientScript": false,
+    "imports": [],
+    "uses": [],
+    "shadowDom": false,
+    "transforms": [],
+    "references": {
+      "props": [
+        {
+          "name": "target",
+          "line": 19,
+          "in": "template"
+        },
+        {
+          "name": "sticky",
+          "line": 19,
+          "in": "template"
+        },
+        {
+          "name": "label",
+          "line": 19,
+          "in": "template"
+        }
+      ],
+      "setup": [
+        {
+          "name": "isOn",
+          "line": 19,
+          "in": "template"
+        }
+      ],
+      "loops": [],
+      "data": [],
+      "helpers": [],
+      "unresolved": [],
+      "webc": []
+    }
+  },
+  "warnings": []
+}</code></pre>
+	<span hidden="" id="norn-code-block-webc-CqQNF">
+		<span data-string="label" id="norn-code-block-webc-CqQNF-copy">Copy {name} to clipboard</span>
+		<span data-string="copy">Copy</span>
+		<span data-string="copied">Copied</span>
+		<span data-string="failed">Copy failed</span>
+	</span>
+	<span data-name="" hidden=""><span data-default="">json code</span></span>
+</figure>
+
+
+</norn-code-block>
 </norn-rich-text>
 
 
-	<norn-pager><nav aria-labelledby="norn-pager-webc-whEVT">
-	<span data-label="" id="norn-pager-webc-whEVT">Pager</span>
-	<a rel="prev" href="/webc-docs/preview/6/components/"><norn-icon>
+	<norn-pager><nav aria-labelledby="norn-pager-webc-Iq71U">
+	<span data-label="" id="norn-pager-webc-Iq71U">Pager</span>
+	<a rel="prev" href="/webc-docs/preview/6/packages/webcdoc-schema/"><norn-icon>
 <svg viewBox="0 0 24 24" aria-hidden="true" data-mirror="">
 	<path d="M19 12H5M11 6l-6 6l6 6"></path>
 </svg>
 
 
-</norn-icon><span>Components</span></a>
-	<a rel="next" href="/webc-docs/preview/6/plugins/"><span>Plugins</span><norn-icon>
-<svg viewBox="0 0 24 24" aria-hidden="true" data-mirror="">
-	<path d="M5 12h14M13 6l6 6l-6 6"></path>
-</svg>
-
-
-</norn-icon></a>
+</norn-icon><span>@allons-y/webcdoc-schema</span></a>
+	
 </nav>
 
 </norn-pager>
@@ -244,14 +603,12 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
 					<p><strong>Project</strong></p>
 					<ul>
 						<li><a href="https://github.com/allonsy-studio/webc-docs">GitHub</a></li>
-<li><a href="https://github.com/allonsy-studio/webc-docs/blob/main/CHANGELOG.md">Changelog</a></li>
 					</ul>
 				</div>
 <div>
 					<p><strong>Help</strong></p>
 					<ul>
 						<li><a href="https://github.com/allonsy-studio/webc-docs/issues">Report an issue</a></li>
-<li><a href="https://github.com/allonsy-studio/webc-docs/blob/main/.github/CONTRIBUTING.md">Contributing guide</a></li>
 <li><a href="https://github.com/allonsy-studio/.github/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
 <li><a href="https://github.com/allonsy-studio/.github/blob/main/SECURITY.md">Security policy</a></li>
 					</ul>

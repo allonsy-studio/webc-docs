@@ -6,8 +6,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>@layer norn.reset, norn.base, norn.layout, norn.components, norn.oss, norn.print;</style>
-<title>norn-breadcrumbs: webc-docs</title>
-
+<title>@allons-y/webcdoc: webc-docs</title>
+<meta name="description" content="Parses JSDoc-style comments in WebC components into JSON documentation metadata">
 <link rel="canonical" href="https://projects.allons-y.studio/webc-docs/">
 <meta name="color-scheme" content="light dark">
 
@@ -16,7 +16,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="webc-docs: Documentation metadata for WebC components, from the comments already in the file">
-
+<meta property="og:description" content="Parses JSDoc-style comments in WebC components into JSON documentation metadata">
 <meta property="og:url" content="https://projects.allons-y.studio/webc-docs/">
 
 
@@ -54,9 +54,9 @@
 			</a>
 	<details>
 		<summary>Menu</summary>
-		<nav aria-labelledby="norn-header-webc-C6EGT"><span data-label="" id="norn-header-webc-C6EGT">Primary</span>
+		<nav aria-labelledby="norn-header-webc-WwlMD"><span data-label="" id="norn-header-webc-WwlMD">Primary</span>
 			
-			<a href="/webc-docs/preview/6/components/"><norn-icon>
+			<a href="/webc-docs/preview/6/packages/webcdoc-schema/"><norn-icon>
 <svg viewBox="0 0 24 24" aria-hidden="true">
 	<path d="M2 5h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 5h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"></path>
 </svg>
@@ -73,12 +73,12 @@
 <norn-sidebar-layout><div>
 	<details>
 		<summary><span>Documentation</span></summary>
-		<norn-side-nav><nav aria-labelledby="norn-side-nav-webc-heEP4">
-	<span data-label="" id="norn-side-nav-webc-heEP4"><span>Documentation</span></span>
-	<norn-search><search aria-labelledby="norn-search-webc-n0Fk2" data-bundle="/webc-docs/preview/6/pagefind/pagefind.js">
+		<norn-side-nav><nav aria-labelledby="norn-side-nav-webc-lDu_d">
+	<span data-label="" id="norn-side-nav-webc-lDu_d"><span>Documentation</span></span>
+	<norn-search><search aria-labelledby="norn-search-webc-C037y" data-bundle="/webc-docs/preview/6/pagefind/pagefind.js">
 	<form action="https://duckduckgo.com/" method="get">
 		<label>
-			<span id="norn-search-webc-n0Fk2"><span>Search the docs</span></span>
+			<span id="norn-search-webc-C037y"><span>Search the docs</span></span>
 			<norn-icon>
 <svg viewBox="0 0 24 24" aria-hidden="true">
 	<path d="M18 11a7 7 0 1 1-14 0a7 7 0 1 1 14 0M21 21l-5-5"></path>
@@ -114,15 +114,11 @@
 </norn-search>
 	<ul>
 		<li>
-			<a href="/webc-docs/preview/6/components/"><span>Components</span></a>
+			<a href="/webc-docs/preview/6/packages/webcdoc-schema/"><span>@allons-y/webcdoc-schema</span></a>
 			
 		</li>
 <li>
-			<a href="/webc-docs/preview/6/components/norn-accordion/"><span>norn-accordion</span></a>
-			
-		</li>
-<li>
-			<a href="/webc-docs/preview/6/plugins/"><span>Plugins</span></a>
+			<a href="/webc-docs/preview/6/comment-format/"><span>Comment format</span></a>
 			
 		</li>
 	</ul>
@@ -133,63 +129,194 @@
 	<article>
 	
 	
-	<h1>norn-breadcrumbs</h1>
+	<h1>@allons-y/webcdoc</h1>
 	
 	<norn-rich-text data-measure="none" data-pagefind-body="">
-<p>/*
-SPDX-License-Identifier: MPL-2.0
-This Source Code Form is subject to the terms of the Mozilla Public
-License, v. 2.0. If a copy of the MPL was not distributed with this
-file, You can obtain one at https://mozilla.org/MPL/2.0/.
-/</p>
-
-<p class="requires">
-  Requires:
-  <span><span>data</span> <code>page</code>.</span>
-<span><span>helper</span> <code>nornComponentStrings</code>.</span>
-<span><span>undocumented</span> <code>items</code>.</span>
-<span><span>undocumented</span> <code>uid</code>.</span>
+<p>
+  Published on npm as <a href="https://www.npmjs.com/package/@allons-y/webcdoc">@allons-y/webcdoc</a> at version <code>0.1.0-beta.0</code>.
+  The source is in <a href="https://github.com/allonsy-studio/webc-docs/tree/main/packages/webcdoc">its folder on GitHub</a>.
 </p>
+<div class="readme"><p>Parses JSDoc-style comments in WebC components into JSON documentation metadata. It reads <code>.webc</code> files, combines the comments with what the template shows, and writes one record per component. Parser only: no rendering, no Eleventy, no TypeScript compiler.</p>
+<p>Status: pre-release (<code>0.1.0-beta.0</code>).</p>
+<h2>Install</h2>
+<pre><code class="language-sh">npm install --save-dev @allons-y/webcdoc
+</code></pre>
+<p>Requires Node 24.</p>
+<h2>Comment format</h2>
+<p>Write documentation in a WebC server-only comment (<code>&lt;!--- ---&gt;</code>), which never ships to output. A <code>/** */</code> block inside <code>&lt;style&gt;</code> or <code>&lt;script webc:setup&gt;</code> works the same way. Regular <code>&lt;!-- --&gt;</code> comments are ignored (and reported, since they ship to output).</p>
+<pre><code class="language-html">&lt;!---
+A link to the main content region, placed first in the page.
 
-
-
-<h2>Props</h2>
-
-<p>No props are documented.</p>
-
-<h2>Slots</h2>
+@summary Skip-to-content link.
+@prop {string} [label=Skip to content] - Visible text of the link.
+@prop {string} [target=#main] - Id of the region to jump to.
+@prop {boolean} [sticky=false] - Keep the link visible once focused.
+@cssprop {&lt;color&gt;} [--skip-link-bg=CanvasText] - Background when focused.
+@example Default
+&lt;skip-link&gt;&lt;/skip-link&gt;
+@example Custom target
+&lt;skip-link @target="#content" @label="Jump to article"&gt;&lt;/skip-link&gt;
+@since 0.2.0
+---&gt;
+&lt;script webc:setup&gt;
+  /** Normalize a WebC boolean prop ("", "true", true all mean on). */
+  const isOn = (v) =&gt; v === true || v === '' || v === 'true';
+&lt;/script&gt;
+&lt;a :href="target" :class="isOn(sticky) ? 'is-sticky' : ''" @text="label"&gt;&lt;/a&gt;
+&lt;!--- @slot icon - Decorative icon shown before the label. ---&gt;
+&lt;slot name="icon"&gt;&lt;/slot&gt;
+&lt;style webc:scoped&gt;
+  /** @csspart link - The anchor element, for consumers styling it from outside. */
+  :host a:focus { background: var(--skip-link-bg); }
+&lt;/style&gt;
+</code></pre>
+<p>The tag grammar is <code>@tag {type} [name=default] - description</code>. Brackets mean optional. A tag written next to the thing it describes (a comment before a <code>&lt;slot&gt;</code>, a block in <code>&lt;style&gt;</code> or setup) wins over the header. Slots, the host tag, and references are inferred from the template, and inference decides what exists: a documented slot with no <code>&lt;slot&gt;</code> is a warning, not a slot.</p>
+<h2>Tags</h2>
 <table>
-  <thead>
-    <tr><th scope="col">Slot</th><th scope="col">Description</th><th scope="col">Fallback</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>label</code></td>
-      <td></td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Record field</th>
+<th>Form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@summary</code></td>
+<td><code>summary</code></td>
+<td>One line of text.</td>
+</tr>
+<tr>
+<td><code>@tag</code></td>
+<td><code>tagName</code></td>
+<td>Overrides the file name as the tag name.</td>
+</tr>
+<tr>
+<td><code>@prop</code></td>
+<td><code>props</code></td>
+<td><code>{type} [name=default] - description</code></td>
+</tr>
+<tr>
+<td><code>@attr</code></td>
+<td><code>attributes</code></td>
+<td><code>{type} [name=default] - description</code></td>
+</tr>
+<tr>
+<td><code>@slot</code></td>
+<td><code>slots</code></td>
+<td><code>name - description</code>; no name means the default slot.</td>
+</tr>
+<tr>
+<td><code>@cssprop</code></td>
+<td><code>cssProperties</code></td>
+<td><code>{syntax} [--name=default] - description</code></td>
+</tr>
+<tr>
+<td><code>@csspart</code></td>
+<td><code>cssParts</code></td>
+<td><code>name - description</code></td>
+</tr>
+<tr>
+<td><code>@cssstate</code></td>
+<td><code>cssStates</code></td>
+<td><code>name - description</code></td>
+</tr>
+<tr>
+<td><code>@fires</code></td>
+<td><code>events</code></td>
+<td><code>{type} name - description</code></td>
+</tr>
+<tr>
+<td><code>@example</code></td>
+<td><code>examples</code></td>
+<td>Title on the tag line, code on the lines after it.</td>
+</tr>
+<tr>
+<td><code>@demo</code></td>
+<td><code>demos</code></td>
+<td><code>url - description</code></td>
+</tr>
+<tr>
+<td><code>@deprecated</code></td>
+<td><code>deprecated</code></td>
+<td>Optional reason; the field is <code>true</code> or the reason.</td>
+</tr>
+<tr>
+<td><code>@since</code></td>
+<td><code>tags.since</code></td>
+<td>Version.</td>
+</tr>
+</tbody>
 </table>
+<p>Other tags are kept under <code>tags[name]</code> as <code>{ name, description }</code>. Unknown tags are never errors.</p>
+<h2>CLI</h2>
+<pre><code class="language-sh">webcdoc "components/**/*.webc" --out webcdoc.json
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--out &lt;file&gt;</code></td>
+<td>Where to write the grouped document. Default <code>webcdoc.json</code>.</td>
+</tr>
+<tr>
+<td><code>--split</code></td>
+<td>Also write <code>components/&lt;tag&gt;.json</code> next to the output file.</td>
+</tr>
+<tr>
+<td><code>--manifest</code></td>
+<td>Also write <code>custom-elements.json</code> next to the output file.</td>
+</tr>
+<tr>
+<td><code>--strict</code></td>
+<td>Exit with code 1 when any warning was raised.</td>
+</tr>
+<tr>
+<td><code>--helpers a,b</code></td>
+<td>Names a host provides. Replaces the default list.</td>
+</tr>
+</tbody>
+</table>
+<p>The last line on stdout reads <code>Documented 12 components, 2 warnings</code>. Warnings are listed on stderr with file and line.</p>
+<h2>API</h2>
+<pre><code class="language-ts">import { parse, parseFile, parseAll, toManifest } from "@allons-y/webcdoc";
 
-
-<h2>CSS custom properties</h2>
-
-<p>No CSS custom properties are documented.</p>
-
-<h2>CSS parts</h2>
-
-<p>No CSS parts are documented.</p>
-
-<h2>Examples</h2>
-
-<p>No examples are documented.</p>
-
-<h2>Warnings</h2>
-<ul>
-  <li><code>prop-undocumented</code> line <span>9</span>: <span>"items" is read in the template but is not a documented prop, setup export, loop variable, or known helper.</span></li>
-<li><code>prop-undocumented</code> line <span>9</span>: <span>"uid" is read in the template but is not a documented prop, setup export, loop variable, or known helper.</span></li>
-</ul>
-
+const record = parse(source, { path: "components/skip-link.webc" });
+const file = await parseFile("components/skip-link.webc");
+const doc = await parseAll("components/**/*.webc");
+const manifest = toManifest(doc.components, doc);
+</code></pre>
+<p>Warnings never throw: each record has <code>warnings: [{ code, message, line }]</code>, and the document has package-level warnings such as <code>duplicate-tag</code>.</p>
+<h2>Record shape</h2>
+<p>One record per file. The types live in <a href="https://github.com/allonsy-studio/webc-docs/tree/main/packages/webcdoc-schema"><code>@allons-y/webcdoc-schema</code></a> and are re-exported here.</p>
+<pre><code class="language-json">{
+  "path": "components/skip-link.webc",
+  "tagName": "skip-link",
+  "summary": "Skip-to-content link.",
+  "description": "A link to the main content region, placed first in the page.",
+  "props": [{ "name": "label", "attribute": "@label", "property": "label", "type": { "text": "string" }, "default": "Skip to content", "optional": true, "description": "..." }],
+  "attributes": [],
+  "slots": [{ "name": "icon", "description": "...", "hasFallback": false, "source": "template" }],
+  "cssProperties": [], "cssParts": [], "cssStates": [], "events": [],
+  "examples": [], "demos": [], "deprecated": false, "tags": {},
+  "webc": { "host": {}, "setup": {}, "styles": {}, "clientScript": false, "imports": [], "uses": [], "references": {} },
+  "warnings": []
+}
+</code></pre>
+<p>The default slot has the name <code>""</code>. <code>webc.host</code> says whether WebC keeps the host tag in the output and why.</p>
+<h2>References</h2>
+<p><code>webc.references</code> sorts every name read in template expressions and setup scripts into buckets: <code>props</code> (documented props), <code>setup</code> (exports of <code>webc:setup</code>), <code>loops</code> (variables from <code>webc:for</code>), <code>data</code> (<code>$data.*</code> paths), <code>helpers</code> (names from the helper list), <code>webc</code> (<code>webc.*</code> accessors), and <code>unresolved</code> (everything else). Each entry has the name or path, the line, and whether it was read in the template or in setup.</p>
+<p>The report exists for portability. A component that reads global data, calls helpers, or uses names nothing defines only works in hosts that provide them. <code>data</code>, <code>helpers</code>, and <code>unresolved</code> list what a host must supply before the component renders the same way elsewhere. Unresolved names read in the template also raise <code>prop-undocumented</code>.</p>
+<h2>Custom Elements Manifest</h2>
+<p><code>toManifest(records, pkg)</code> returns a <a href="https://github.com/webcomponents/custom-elements-manifest">Custom Elements Manifest</a> (<code>schemaVersion</code> <code>2.1.0</code>), typed against the official <code>custom-elements-manifest</code> schema. Each record becomes one module with one custom element declaration and a <code>custom-element-definition</code> export. Props and attributes become <code>attributes</code>; slots, CSS properties, parts, states, events, and demos map directly. WebC-only facts sit under a <code>webc</code> key on the declaration. The module also exports small predicates (<code>isCustomElementDeclaration</code>, <code>isCustomElementExport</code>), <code>getCustomElements</code>, and <code>normalizeModulePath</code>.</p>
+<h2>License</h2>
+<p><a href="https://github.com/allonsy-studio/webc-docs/blob/main/LICENSE">MPL-2.0</a>: use freely, modify as needed; changes to MPL-licensed files should be shared back under the same license.</p>
+</div>
 </norn-rich-text>
 
 
@@ -237,14 +364,12 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
 					<p><strong>Project</strong></p>
 					<ul>
 						<li><a href="https://github.com/allonsy-studio/webc-docs">GitHub</a></li>
-<li><a href="https://github.com/allonsy-studio/webc-docs/blob/main/CHANGELOG.md">Changelog</a></li>
 					</ul>
 				</div>
 <div>
 					<p><strong>Help</strong></p>
 					<ul>
 						<li><a href="https://github.com/allonsy-studio/webc-docs/issues">Report an issue</a></li>
-<li><a href="https://github.com/allonsy-studio/webc-docs/blob/main/.github/CONTRIBUTING.md">Contributing guide</a></li>
 <li><a href="https://github.com/allonsy-studio/.github/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
 <li><a href="https://github.com/allonsy-studio/.github/blob/main/SECURITY.md">Security policy</a></li>
 					</ul>
