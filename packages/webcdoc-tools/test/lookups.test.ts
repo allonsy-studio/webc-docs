@@ -5,7 +5,7 @@
 
 import { describe, expect, it } from "vitest";
 import { getComponent, getComponentByPath, listTagNames, normalizePath } from "../src/index.js";
-import { makeDocument, makeRecord, sampleDocument } from "./fixtures.js";
+import { makeDocument, makeRecord, sampleDocument } from "./helpers.js";
 
 describe("normalizePath", () => {
 	it("drops leading ./, collapses slashes, and uses forward slashes", () => {
