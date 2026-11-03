@@ -14,20 +14,27 @@ covers this repository only.
 
 ## Commands
 
-| Command        | Purpose                                              |
-| -------------- | ---------------------------------------------------- |
-| `yarn install` | Install dependencies (run `corepack enable` first)  |
-| `yarn lint`    | Lint JS, TS, JSON, and Markdown via `opx lint`       |
-| `yarn format`  | Apply lint fixes via `opx lint --fix`                |
-| `yarn build`   | Build every workspace in dependency order            |
-| `yarn test`    | Run Vitest in every workspace                        |
+| Command          | Purpose                                                      |
+| ---------------- | ------------------------------------------------------------ |
+| `yarn install`   | Install dependencies (run `corepack enable` first)           |
+| `yarn lint`      | Lint JS, TS, JSON, and Markdown via `opx lint`               |
+| `yarn format`    | Apply lint fixes via `opx lint --fix`                        |
+| `yarn build`     | Build every workspace in dependency order                    |
+| `yarn typecheck` | Type-check `src` and `test` in every workspace (build first) |
+| `yarn test`      | Run Vitest in every workspace                                |
 
-Run a single workspace with `yarn workspace <name> run <script>`, for example
-`yarn workspace @allons-y/webcdoc run test`.
+Run one workspace's tests from the repository root with
+`yarn vitest run --project <name>`, for example
+`yarn vitest run --project @allons-y/webcdoc`. Add `-u` to update snapshots.
+`yarn workspace <name> run test` does not work, because `vitest` is declared only at the
+root.
 
 ## Layout
 
 - `packages/webcdoc`: `@allons-y/webcdoc`, the parser, CLI, and manifest adapter
+- `packages/webcdoc-schema`: `@allons-y/webcdoc-schema`, the record types and JSON Schema
+- `packages/webcdoc-tools`: `@allons-y/webcdoc-tools`, pure helpers for filtering, looking up, and ordering components
+- `packages/webcdoc-lint`: `@allons-y/webcdoc-lint`, the documentation linter and its rules
 - `plugins/eleventy-plugin-webcdoc`: `@allons-y/eleventy-plugin-webcdoc`, the Eleventy plugin that generates the document inside the build
 - `plugins/cem-plugin-webc`: `@allons-y/cem-plugin-webc`, the Custom Elements Manifest plugin
 - `site`: Eleventy docs site, private, not published to npm
@@ -35,9 +42,13 @@ Run a single workspace with `yarn workspace <name> run <script>`, for example
 
 ## Testing
 
+Layout, naming, and techniques follow the org's
+[testing standard](https://github.com/allonsy-studio/.github/blob/main/docs/testing.md).
+
 - Tests live in `test/` inside each package and run with Vitest.
 - Root `vitest.config.ts` lists the workspace projects.
-- Fixtures go in `packages/webcdoc/test/fixtures/`.
+- Fixtures go in `packages/webcdoc/test/fixtures/`; shared helpers in `test/helpers.ts`.
+- `WEBC_STUBS_DIR` (see `.env.example`) points the stubs test at WebC's own test files.
 
 ## Source conventions
 

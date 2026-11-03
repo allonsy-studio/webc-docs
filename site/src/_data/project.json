@@ -20,37 +20,5 @@
       "title": "Checks the output",
       "description": "A JSON Schema and a linter turn the warnings into findings you can fail a build on."
     }
-  ],
-  "packages": [
-    {
-      "title": "@allons-y/eleventy-plugin-webcdoc",
-      "description": "The recommended setup: generates the document inside an Eleventy build.",
-      "href": "https://github.com/allonsy-studio/webc-docs/tree/main/plugins/eleventy-plugin-webcdoc"
-    },
-    {
-      "title": "@allons-y/webcdoc",
-      "description": "The parser, the webcdoc command, and a Custom Elements Manifest adapter.",
-      "href": "https://github.com/allonsy-studio/webc-docs/tree/main/packages/webcdoc"
-    },
-    {
-      "title": "@allons-y/webcdoc-schema",
-      "description": "TypeScript types and the JSON Schema for the record and the grouped document.",
-      "href": "https://github.com/allonsy-studio/webc-docs/tree/main/packages/webcdoc-schema"
-    },
-    {
-      "title": "@allons-y/webcdoc-tools",
-      "description": "Pure helpers for finding, ordering, and checking the components in a document.",
-      "href": "https://github.com/allonsy-studio/webc-docs/tree/main/packages/webcdoc-tools"
-    },
-    {
-      "title": "@allons-y/webcdoc-lint",
-      "description": "Validates a document against the schema and lints its components.",
-      "href": "https://github.com/allonsy-studio/webc-docs/tree/main/packages/webcdoc-lint"
-    },
-    {
-      "title": "@allons-y/cem-plugin-webc",
-      "description": "A Custom Elements Manifest analyzer plugin that reads .webc files.",
-      "href": "https://github.com/allonsy-studio/webc-docs/tree/main/plugins/cem-plugin-webc"
-    }
   ]
 }

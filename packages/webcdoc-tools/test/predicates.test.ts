@@ -5,7 +5,7 @@
 
 import { describe, expect, it } from "vitest";
 import { hasClientScript, hasWarning, isDeprecated, isDocumented, isPortable, rendersHostTag } from "../src/index.js";
-import { makeRecord } from "./fixtures.js";
+import { makeRecord } from "./helpers.js";
 
 describe("isDocumented", () => {
 	it("is true for a summary, a description, or a documented prop or slot", () => {
