@@ -230,31 +230,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allons-y/webc-docs@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@allons-y/webc-docs@workspace:."
-  dependencies:
-    "@allons-y/opx-cli": "npm:^0.1.0-beta.0"
-    "@allons-y/opx-lint-js": "npm:^0.1.0-beta.0"
-    "@allons-y/opx-lint-json": "npm:^0.1.0-beta.0"
-    "@allons-y/opx-lint-md": "npm:^0.1.0-beta.0"
-    "@changesets/changelog-github": "npm:^1.0.1"
-    "@changesets/cli": "npm:^3.0.3"
-    "@eslint/css": "npm:^1.4.0"
-    "@eslint/js": "npm:^10.0.1"
-    "@eslint/json": "npm:^2.0.1"
-    "@eslint/markdown": "npm:^8.0.3"
-    "@types/node": "npm:^24.0.0"
-    eslint: "npm:^10.8.0"
-    eslint-plugin-license-header: "npm:^0.9.0"
-    husky: "npm:^9.1.7"
-    lint-staged: "npm:^17.3.0"
-    typescript: "npm:^5.9.3"
-    vite: "npm:^8.3.5"
-    vitest: "npm:^5.1.0"
-  languageName: unknown
-  linkType: soft
-
 "@allons-y/webcdoc@workspace:packages/webcdoc":
   version: 0.0.0-use.local
   resolution: "@allons-y/webcdoc@workspace:packages/webcdoc"
@@ -4050,6 +4025,31 @@ __metadata:
   checksum: 10c0/c1be6065fe9fa73ceef69b4fbd245938c4654ba429066b9283e09527ada3e1c91aa03c2b8520b444af4027e1a8a1ca388dbb6b7b3c973582d053b67ffeeac11c
   languageName: node
   linkType: hard
+
+"webc-docs@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "webc-docs@workspace:."
+  dependencies:
+    "@allons-y/opx-cli": "npm:^0.1.0-beta.0"
+    "@allons-y/opx-lint-js": "npm:^0.1.0-beta.0"
+    "@allons-y/opx-lint-json": "npm:^0.1.0-beta.0"
+    "@allons-y/opx-lint-md": "npm:^0.1.0-beta.0"
+    "@changesets/changelog-github": "npm:^1.0.1"
+    "@changesets/cli": "npm:^3.0.3"
+    "@eslint/css": "npm:^1.4.0"
+    "@eslint/js": "npm:^10.0.1"
+    "@eslint/json": "npm:^2.0.1"
+    "@eslint/markdown": "npm:^8.0.3"
+    "@types/node": "npm:^24.0.0"
+    eslint: "npm:^10.8.0"
+    eslint-plugin-license-header: "npm:^0.9.0"
+    husky: "npm:^9.1.7"
+    lint-staged: "npm:^17.3.0"
+    typescript: "npm:^5.9.3"
+    vite: "npm:^8.3.5"
+    vitest: "npm:^5.1.0"
+  languageName: unknown
+  linkType: soft
 
 "which@npm:^2.0.1":
   version: 2.0.2
