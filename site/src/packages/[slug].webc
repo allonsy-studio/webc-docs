@@ -1,0 +1,13 @@
+---
+layout: norn-docs.webc
+pagination:
+  data: packages
+  size: 1
+  alias: pkg
+---
+<p webc:if="pkg.recommended"><strong>Recommended setup.</strong> Start here when the project uses Eleventy.</p>
+<p>
+  Published on npm as <a :href="pkg.npm" @text="pkg.name"></a> at version <code @text="pkg.version"></code>.
+  The source is in <a :href="pkg.github">its folder on GitHub</a>.
+</p>
+<div class="readme" @html="pkg.html"></div>

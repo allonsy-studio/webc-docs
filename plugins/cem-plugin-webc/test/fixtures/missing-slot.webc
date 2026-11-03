@@ -1,0 +1,4 @@
+<!---
+@slot ghost - Documented but absent from the template.
+--->
+<p>No slot here.</p>

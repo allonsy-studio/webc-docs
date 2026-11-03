@@ -1,0 +1,23 @@
+---
+layout: norn-docs.webc
+title: Comment format
+description: How a WebC component documents itself, with one fully documented example.
+order: 7
+---
+<p>
+  webcdoc reads a server-only comment at the top of a <code>.webc</code> file, or next to the element it describes. The example below is <code>_components/skip-link.webc</code> in this repository, and the record after it is what the plugin wrote for that file.
+</p>
+
+<h2>The source</h2>
+<norn-code-block :@code="skipLinkSource" @language="html" @caption="_components/skip-link.webc"></norn-code-block>
+
+<h2>The record</h2>
+<p>The plugin reads the comments and the template together. Each field comes from one of three places: the header comment, a comment next to the element it describes, or the template itself.</p>
+<ul>
+  <li><code>summary</code> and <code>description</code> come from <code>@summary</code> and the text before the tags.</li>
+  <li><code>props</code> come from <code>@prop</code>, with the attribute name as written and the property name camel-cased.</li>
+  <li><code>slots</code> come from the <code>&lt;slot&gt;</code> elements in the template, and their descriptions from the comment before each one.</li>
+  <li><code>cssProperties</code> come from <code>@cssprop</code>, and <code>cssParts</code> from <code>@csspart</code> in the style block.</li>
+  <li><code>examples</code> come from each <code>@example</code>, and <code>webc.references</code> lists what the template reads from the host.</li>
+</ul>
+<norn-code-block :@code="skipLinkRecord" @language="json" @caption="The webcdoc record for skip-link"></norn-code-block>

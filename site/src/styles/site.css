@@ -1,0 +1,36 @@
+/**
+ * Site styles for the webcdoc docs. Unlayered, so they win over the Norn and OSS layers.
+ * The light scheme is fixed: the page surfaces do not follow the visitor's dark mode setting.
+ */
+
+:root {
+	color-scheme: light;
+	--norn-surface-base: #ffffff;
+	--norn-surface-raised: #f6f7f9;
+	--norn-surface-code: #f2f4f7;
+	--norn-text-base: #1d2129;
+	--norn-text-muted: #5a6170;
+	--norn-font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	--norn-font-heading: var(--norn-font-body);
+}
+
+.requires {
+	font-size: 0.95em;
+}
+
+.component-index li {
+	margin-block: 0.4em;
+}
+
+table {
+	border-collapse: collapse;
+	inline-size: 100%;
+}
+
+th,
+td {
+	text-align: start;
+	vertical-align: top;
+	padding: 0.4em 0.6em;
+	border-block-end: 1px solid #d8dce3;
+}
