@@ -54,12 +54,12 @@
 			</a>
 	<details>
 		<summary>Menu</summary>
-		<nav aria-labelledby="norn-header-webc-8htec"><span data-label="" id="norn-header-webc-8htec">Primary</span>
+		<nav aria-labelledby="norn-header-webc-oRlUX"><span data-label="" id="norn-header-webc-oRlUX">Primary</span>
 			
 			<a href="#install">Install</a>
 <a href="#usage">Usage</a>
 <a href="#features">Features</a>
-<a href="/webc-docs/preview/7/components/"><norn-icon>
+<a href="/webc-docs/preview/7/packages/webcdoc-schema/"><norn-icon>
 <svg viewBox="0 0 24 24" aria-hidden="true">
 	<path d="M2 5h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 5h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"></path>
 </svg>
@@ -125,7 +125,7 @@ import webcdocPlugin from &quot;@allons-y/eleventy-plugin-webcdoc&quot;;
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(webcPlugin, { components: &quot;src/_components/**/*.webc&quot; });
   eleventyConfig.addPlugin(webcdocPlugin);
-}" data-strings="norn-code-block-webc-zKzUL" data-compact="" data-surface="code"><span data-icons=""><norn-icon>
+}" data-strings="norn-code-block-webc-yYOFC" data-compact="" data-surface="code"><span data-icons=""><norn-icon>
 <svg viewBox="0 0 24 24" aria-hidden="true">
 	<path d="M9 9h11v11H9zM15 9V4H4v11h5"></path>
 </svg>
@@ -149,8 +149,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(webcPlugin, { components: "src/_components/**/*.webc" });
   eleventyConfig.addPlugin(webcdocPlugin);
 }</code></pre>
-	<span hidden="" id="norn-code-block-webc-zKzUL">
-		<span data-string="label" id="norn-code-block-webc-zKzUL-copy">Copy {name} to clipboard</span>
+	<span hidden="" id="norn-code-block-webc-yYOFC">
+		<span data-string="label" id="norn-code-block-webc-yYOFC-copy">Copy {name} to clipboard</span>
 		<span data-string="copy">Copy</span>
 		<span data-string="copied">Copied</span>
 		<span data-string="failed">Copy failed</span>
@@ -171,7 +171,7 @@ export default function (eleventyConfig) {
 <figure>
 	
 	<norn-copy-button>
-<button type="button" hidden="" data-value="yarn add --dev @allons-y/eleventy-plugin-webcdoc" data-strings="norn-code-block-webc-Es2cs" data-compact="" data-surface="code"><span data-icons=""><norn-icon>
+<button type="button" hidden="" data-value="yarn add --dev @allons-y/eleventy-plugin-webcdoc" data-strings="norn-code-block-webc-xoxEh" data-compact="" data-surface="code"><span data-icons=""><norn-icon>
 <svg viewBox="0 0 24 24" aria-hidden="true">
 	<path d="M9 9h11v11H9zM15 9V4H4v11h5"></path>
 </svg>
@@ -189,8 +189,8 @@ export default function (eleventyConfig) {
 
 </norn-copy-button>
 	<pre dir="ltr" data-language="sh"><code data-tokens="[[&quot;function&quot;,&quot;keyword&quot;,&quot;flag&quot;,&quot;string&quot;],[0,0,4,1,1,3,2,1,5,3,1,33]]">yarn add --dev @allons-y/eleventy-plugin-webcdoc</code></pre>
-	<span hidden="" id="norn-code-block-webc-Es2cs">
-		<span data-string="label" id="norn-code-block-webc-Es2cs-copy">Copy {name} to clipboard</span>
+	<span hidden="" id="norn-code-block-webc-xoxEh">
+		<span data-string="label" id="norn-code-block-webc-xoxEh-copy">Copy {name} to clipboard</span>
 		<span data-string="copy">Copy</span>
 		<span data-string="copied">Copied</span>
 		<span data-string="failed">Copy failed</span>
@@ -247,10 +247,10 @@ export default function (eleventyConfig) {
 		<li>
 			<norn-card><article data-title-face="mono">
 				<h3>
-					<a href="https://github.com/allonsy-studio/webc-docs/tree/main/plugins/eleventy-plugin-webcdoc">@allons-y/eleventy-plugin-webcdoc</a>
+					<a href="/webc-docs/preview/7/packages/webcdoc-schema/">@allons-y/webcdoc-schema</a>
 					
 				</h3>
-				<p>The recommended setup: generates the document inside an Eleventy build.</p>
+				<p>TypeScript types and a JSON Schema for the document that @allons-y/webcdoc writes</p>
 			</article>
 
 </norn-card>
@@ -258,10 +258,10 @@ export default function (eleventyConfig) {
 <li>
 			<norn-card><article data-title-face="mono">
 				<h3>
-					<a href="https://github.com/allonsy-studio/webc-docs/tree/main/packages/webcdoc">@allons-y/webcdoc</a>
+					<a href="/webc-docs/preview/7/packages/webcdoc/">@allons-y/webcdoc</a>
 					
 				</h3>
-				<p>The parser, the webcdoc command, and a Custom Elements Manifest adapter.</p>
+				<p>Parses JSDoc-style comments in WebC components into JSON documentation metadata</p>
 			</article>
 
 </norn-card>
@@ -269,10 +269,10 @@ export default function (eleventyConfig) {
 <li>
 			<norn-card><article data-title-face="mono">
 				<h3>
-					<a href="https://github.com/allonsy-studio/webc-docs/tree/main/packages/webcdoc-schema">@allons-y/webcdoc-schema</a>
+					<a href="/webc-docs/preview/7/packages/webcdoc-tools/">@allons-y/webcdoc-tools</a>
 					
 				</h3>
-				<p>TypeScript types and the JSON Schema for the record and the grouped document.</p>
+				<p>Pure helpers for reading, filtering, and ordering the components in a webcdoc document</p>
 			</article>
 
 </norn-card>
@@ -280,10 +280,10 @@ export default function (eleventyConfig) {
 <li>
 			<norn-card><article data-title-face="mono">
 				<h3>
-					<a href="https://github.com/allonsy-studio/webc-docs/tree/main/packages/webcdoc-tools">@allons-y/webcdoc-tools</a>
+					<a href="/webc-docs/preview/7/packages/webcdoc-lint/">@allons-y/webcdoc-lint</a>
 					
 				</h3>
-				<p>Pure helpers for finding, ordering, and checking the components in a document.</p>
+				<p>Validates a webcdoc document against its JSON Schema, then lints the components in it for problems a documentation build should catch</p>
 			</article>
 
 </norn-card>
@@ -291,10 +291,10 @@ export default function (eleventyConfig) {
 <li>
 			<norn-card><article data-title-face="mono">
 				<h3>
-					<a href="https://github.com/allonsy-studio/webc-docs/tree/main/packages/webcdoc-lint">@allons-y/webcdoc-lint</a>
+					<a href="/webc-docs/preview/7/packages/eleventy-plugin-webcdoc/">@allons-y/eleventy-plugin-webcdoc</a>
 					
 				</h3>
-				<p>Validates a document against the schema and lints its components.</p>
+				<p>Generates the webcdoc document from inside Eleventy, the recommended way to document WebC components in an Eleventy project</p>
 			</article>
 
 </norn-card>
@@ -302,10 +302,10 @@ export default function (eleventyConfig) {
 <li>
 			<norn-card><article data-title-face="mono">
 				<h3>
-					<a href="https://github.com/allonsy-studio/webc-docs/tree/main/plugins/cem-plugin-webc">@allons-y/cem-plugin-webc</a>
+					<a href="/webc-docs/preview/7/packages/cem-plugin-webc/">@allons-y/cem-plugin-webc</a>
 					
 				</h3>
-				<p>A Custom Elements Manifest analyzer plugin that reads .webc files.</p>
+				<p>Custom Elements Manifest analyzer plugin that reads .webc files, for projects already running the analyzer.</p>
 			</article>
 
 </norn-card>
@@ -323,13 +323,13 @@ export default function (eleventyConfig) {
 <h2 id="set-up-with-eleventy"><a href="#set-up-with-eleventy">Set up with Eleventy</a></h2>
 
 </norn-heading-anchor>
-<p>Add the plugin next to <code>@11ty/eleventy-plugin-webc</code>. It reads the same component globs, so the documented components are the ones your pages use. Every build writes <code>webcdoc.json</code> to the output folder and exposes the document to templates as <code>webcdoc</code>.</p>
+<p>Add the plugin next to <code>@11ty/eleventy-plugin-webc</code>, and point it at the same component globs. Every build writes <code>webcdoc.json</code> to the output folder and exposes the same document to templates as <code>webcdoc</code>.</p>
 <norn-code-block>
 <figure>
 	
 	<norn-copy-button>
 <button type="button" hidden="" data-value="yarn add --dev @allons-y/eleventy-plugin-webcdoc
-" data-strings="norn-code-block-webc-NOnCU" data-compact="" data-surface="code"><span data-icons=""><norn-icon>
+" data-strings="norn-code-block-webc-zpR-0" data-compact="" data-surface="code"><span data-icons=""><norn-icon>
 <svg viewBox="0 0 24 24" aria-hidden="true">
 	<path d="M9 9h11v11H9zM15 9V4H4v11h5"></path>
 </svg>
@@ -348,8 +348,8 @@ export default function (eleventyConfig) {
 </norn-copy-button>
 	<pre dir="ltr" data-language="sh"><code data-tokens="[[&quot;function&quot;,&quot;keyword&quot;,&quot;flag&quot;,&quot;string&quot;],[0,0,4,1,1,3,2,1,5,3,1,33]]">yarn add --dev @allons-y/eleventy-plugin-webcdoc
 </code></pre>
-	<span hidden="" id="norn-code-block-webc-NOnCU">
-		<span data-string="label" id="norn-code-block-webc-NOnCU-copy">Copy {name} to clipboard</span>
+	<span hidden="" id="norn-code-block-webc-zpR-0">
+		<span data-string="label" id="norn-code-block-webc-zpR-0-copy">Copy {name} to clipboard</span>
 		<span data-string="copy">Copy</span>
 		<span data-string="copied">Copied</span>
 		<span data-string="failed">Copy failed</span>
@@ -359,7 +359,7 @@ export default function (eleventyConfig) {
 
 
 </norn-code-block>
-<p>The plugin checks the filters and helpers your site registers, the global data your templates read, and the <code>webc:import</code> paths on disk. A missing value shows up as a warning in the document instead of a surprise in the output.</p>
+<p>The plugin also reads the filters and helpers your site registers, so a call to one of them is documented as a host helper rather than an unknown name.</p>
 <norn-heading-anchor>
 
 
@@ -375,7 +375,7 @@ export default function (eleventyConfig) {
 	<norn-copy-button>
 <button type="button" hidden="" data-value="yarn add --dev @allons-y/webcdoc
 yarn webcdoc &quot;components/**/*.webc&quot; --out webcdoc.json
-" data-strings="norn-code-block-webc-OyQ2I" data-compact="" data-surface="code"><span data-icons=""><norn-icon>
+" data-strings="norn-code-block-webc-M8L30" data-compact="" data-surface="code"><span data-icons=""><norn-icon>
 <svg viewBox="0 0 24 24" aria-hidden="true">
 	<path d="M9 9h11v11H9zM15 9V4H4v11h5"></path>
 </svg>
@@ -395,8 +395,8 @@ yarn webcdoc &quot;components/**/*.webc&quot; --out webcdoc.json
 	<pre dir="ltr" data-language="sh"><code data-tokens="[[&quot;function&quot;,&quot;keyword&quot;,&quot;flag&quot;,&quot;string&quot;],[0,0,4,1,1,3,2,1,5,3,1,17,0,1,4,1,1,7,3,1,22,2,1,5,3,1,12]]">yarn add --dev @allons-y/webcdoc
 yarn webcdoc "components/**/*.webc" --out webcdoc.json
 </code></pre>
-	<span hidden="" id="norn-code-block-webc-OyQ2I">
-		<span data-string="label" id="norn-code-block-webc-OyQ2I-copy">Copy {name} to clipboard</span>
+	<span hidden="" id="norn-code-block-webc-M8L30">
+		<span data-string="label" id="norn-code-block-webc-M8L30-copy">Copy {name} to clipboard</span>
 		<span data-string="copy">Copy</span>
 		<span data-string="copied">Copied</span>
 		<span data-string="failed">Copy failed</span>
@@ -406,94 +406,15 @@ yarn webcdoc "components/**/*.webc" --out webcdoc.json
 
 
 </norn-code-block>
-<p>Add <code>--split</code> to write one file per component, <code>--manifest</code> to also write a Custom Elements Manifest, and <code>--strict</code> to exit with status 1 on any warning.</p>
 <norn-heading-anchor>
 
 
 
 
-<h2 id="write-the-comment"><a href="#write-the-comment">Write the comment</a></h2>
+<h2 id="document-a-component"><a href="#document-a-component">Document a component</a></h2>
 
 </norn-heading-anchor>
-<p>Put the documentation in a WebC server-only comment at the top of the file, or next to the element it describes. Tags follow the JSDoc pattern: <code>@tag {type} [name=default] - description</code>, where brackets mark an optional value.</p>
-<norn-code-block>
-<figure>
-	
-	<norn-copy-button>
-<button type="button" hidden="" data-value="<!---
-A link to the main content region, placed first in the page.
-
-@summary Skip-to-content link.
-@prop {string} [label=Skip to content] - Visible text of the link.
-@prop {string} [target=#main] - Id of the region to jump to.
-@cssprop {<color>} [--skip-link-bg=CanvasText] - Background when focused.
-@example Default
-<skip-link></skip-link>
-@since 0.2.0
---->
-<script webc:setup>
-  /** Normalize a WebC boolean prop (&quot;&quot;, &quot;true&quot;, true all mean on). */
-  const isOn = (v) => v === true || v === '' || v === 'true';
-</script>
-<a :href=&quot;target&quot; :class=&quot;isOn(sticky) ? 'is-sticky' : ''&quot; @text=&quot;label&quot;></a>
-<!--- @slot icon - Decorative icon shown before the label. --->
-<slot name=&quot;icon&quot;></slot>
-<style webc:scoped>
-  /** @csspart link - The anchor element, for consumers styling it from outside. */
-  :host a:focus { background: var(--skip-link-bg); }
-</style>
-" data-strings="norn-code-block-webc-7AciZ" data-compact="" data-surface="code"><span data-icons=""><norn-icon>
-<svg viewBox="0 0 24 24" aria-hidden="true">
-	<path d="M9 9h11v11H9zM15 9V4H4v11h5"></path>
-</svg>
-
-
-</norn-icon><norn-icon>
-<svg viewBox="0 0 24 24" aria-hidden="true">
-	<path d="M5 12l5 5L20 7"></path>
-</svg>
-
-
-</norn-icon></span><span data-label=""></span></button>
-<span role="status"></span>
-
-
-</norn-copy-button>
-	<pre dir="ltr" data-language="html"><code data-tokens="[[&quot;comment&quot;,&quot;punctuation&quot;,&quot;keyword&quot;,&quot;function&quot;,&quot;number&quot;,&quot;string&quot;],[0,0,5,0,1,60,0,2,30,0,1,66,0,1,60,0,1,73,0,1,16,0,1,23,0,1,12,0,1,4,1,1,1,2,0,6,3,1,10,1,0,1,0,3,68,2,3,5,3,1,4,1,1,1,1,1,1,1,1,1,2,1,2,1,3,3,4,1,4,1,1,2,1,3,3,5,1,2,1,1,2,1,3,3,5,1,6,1,0,1,1,1,2,2,0,6,1,0,1,1,1,1,2,0,1,3,1,5,1,0,1,5,0,8,3,1,6,1,0,1,5,0,33,3,1,5,1,0,1,5,0,7,1,0,3,2,0,1,1,0,1,0,1,63,1,1,1,2,0,4,3,1,4,1,0,1,5,0,6,1,0,3,2,0,4,1,0,1,1,1,1,2,0,5,3,1,11,1,0,1,0,3,81,1,3,1,3,0,4,2,1,1,1,0,1,3,0,5,1,1,1,3,1,10,1,0,1,3,1,3,1,0,1,1,14,2,1,1,1,1,1,2,2,0,5,1,0,1]]">&lt;!---
-A link to the main content region, placed first in the page.
-
-@summary Skip-to-content link.
-@prop {string} [label=Skip to content] - Visible text of the link.
-@prop {string} [target=#main] - Id of the region to jump to.
-@cssprop {&lt;color&gt;} [--skip-link-bg=CanvasText] - Background when focused.
-@example Default
-&lt;skip-link&gt;&lt;/skip-link&gt;
-@since 0.2.0
----&gt;
-&lt;script webc:setup&gt;
-  /** Normalize a WebC boolean prop ("", "true", true all mean on). */
-  const isOn = (v) =&gt; v === true || v === '' || v === 'true';
-&lt;/script&gt;
-&lt;a :href="target" :class="isOn(sticky) ? 'is-sticky' : ''" @text="label"&gt;&lt;/a&gt;
-&lt;!--- @slot icon - Decorative icon shown before the label. ---&gt;
-&lt;slot name="icon"&gt;&lt;/slot&gt;
-&lt;style webc:scoped&gt;
-  /** @csspart link - The anchor element, for consumers styling it from outside. */
-  :host a:focus { background: var(--skip-link-bg); }
-&lt;/style&gt;
-</code></pre>
-	<span hidden="" id="norn-code-block-webc-7AciZ">
-		<span data-string="label" id="norn-code-block-webc-7AciZ-copy">Copy {name} to clipboard</span>
-		<span data-string="copy">Copy</span>
-		<span data-string="copied">Copied</span>
-		<span data-string="failed">Copy failed</span>
-	</span>
-	<span data-name="" hidden=""><span data-default="">html code</span></span>
-</figure>
-
-
-</norn-code-block>
-<p>A tag written next to the thing it describes takes precedence over the same tag in the header. Unknown tags never cause an error. Regular <code>&lt;!-- --&gt;</code> comments are ignored by webcdoc and still ship to the page, so use the triple-dash form for documentation.</p>
+<p>A component documents itself in a server-only comment at the top of its file, or next to the element it describes. The <a href="/webc-docs/preview/7/comment-format/">comment format</a> page shows a full example and the record it produces.</p>
 </norn-rich-text>
 
 
@@ -534,14 +455,12 @@ A link to the main content region, placed first in the page.
 					<p><strong>Project</strong></p>
 					<ul>
 						<li><a href="https://github.com/allonsy-studio/webc-docs">GitHub</a></li>
-<li><a href="https://github.com/allonsy-studio/webc-docs/blob/main/CHANGELOG.md">Changelog</a></li>
 					</ul>
 				</div>
 <div>
 					<p><strong>Help</strong></p>
 					<ul>
 						<li><a href="https://github.com/allonsy-studio/webc-docs/issues">Report an issue</a></li>
-<li><a href="https://github.com/allonsy-studio/webc-docs/blob/main/.github/CONTRIBUTING.md">Contributing guide</a></li>
 <li><a href="https://github.com/allonsy-studio/.github/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
 <li><a href="https://github.com/allonsy-studio/.github/blob/main/SECURITY.md">Security policy</a></li>
 					</ul>
