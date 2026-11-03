@@ -1,0 +1,31 @@
+{
+  "name": "@allons-y/webcdoc",
+  "version": "0.1.0-beta.0",
+  "description": "Parses JSDoc-style comments in WebC components into JSON documentation metadata.",
+  "license": "MPL-2.0",
+  "author": "Cassondra Roberts <1840295+castastrophe@users.noreply.github.com> (https://allons-y.studio)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allonsy-studio/webc-docs.git",
+    "directory": "packages/webcdoc"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "bin": "./dist/bin/cli.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run --passWithNoTests"
+  }
+}

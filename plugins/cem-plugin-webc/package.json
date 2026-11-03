@@ -1,0 +1,33 @@
+{
+  "name": "@allons-y/cem-plugin-webc",
+  "version": "0.1.0-beta.0",
+  "description": "Custom Elements Manifest analyzer plugin for WebC components.",
+  "license": "MPL-2.0",
+  "author": "Cassondra Roberts <1840295+castastrophe@users.noreply.github.com> (https://allons-y.studio)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allonsy-studio/webc-docs.git",
+    "directory": "plugins/cem-plugin-webc"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.10.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run --passWithNoTests"
+  }
+}
