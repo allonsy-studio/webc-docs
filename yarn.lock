@@ -230,13 +230,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@allons-y/webcdoc-lint@workspace:packages/webcdoc-lint":
+  version: 0.0.0-use.local
+  resolution: "@allons-y/webcdoc-lint@workspace:packages/webcdoc-lint"
+  dependencies:
+    "@allons-y/webcdoc": "workspace:^"
+    "@allons-y/webcdoc-schema": "workspace:^"
+    "@allons-y/webcdoc-tools": "workspace:^"
+    "@cfworker/json-schema": "npm:^4.1.4"
+  bin:
+    webcdoc-lint: ./dist/bin/cli.js
+  languageName: unknown
+  linkType: soft
+
 "@allons-y/webcdoc-schema@workspace:^, @allons-y/webcdoc-schema@workspace:packages/webcdoc-schema":
   version: 0.0.0-use.local
   resolution: "@allons-y/webcdoc-schema@workspace:packages/webcdoc-schema"
   languageName: unknown
   linkType: soft
 
-"@allons-y/webcdoc-tools@workspace:packages/webcdoc-tools":
+"@allons-y/webcdoc-tools@workspace:^, @allons-y/webcdoc-tools@workspace:packages/webcdoc-tools":
   version: 0.0.0-use.local
   resolution: "@allons-y/webcdoc-tools@workspace:packages/webcdoc-tools"
   dependencies:
@@ -244,7 +257,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allons-y/webcdoc@workspace:packages/webcdoc":
+"@allons-y/webcdoc@workspace:^, @allons-y/webcdoc@workspace:packages/webcdoc":
   version: 0.0.0-use.local
   resolution: "@allons-y/webcdoc@workspace:packages/webcdoc"
   dependencies:
@@ -276,6 +289,13 @@ __metadata:
     hashery: "npm:^1.5.1"
     keyv: "npm:^5.6.0"
   checksum: 10c0/99e901accd71eeb0bce91484d6c66d7ef2c731b541561eb5dc9ea7fed78bdc0b65e5dd2a80edde50191143bcfc5f238fc4742475b32e82d43b43eea224038e35
+  languageName: node
+  linkType: hard
+
+"@cfworker/json-schema@npm:^4.1.4":
+  version: 4.1.4
+  resolution: "@cfworker/json-schema@npm:4.1.4"
+  checksum: 10c0/8fa7698f6f8f1a218c1545fc33e0a181d977c60d3d48c41a43e802cdfa5276b1c1c4f9e9ba66219505035048e5090358db6ea200e2a8b7c1acdbf5bc2294c2bc
   languageName: node
   linkType: hard
 

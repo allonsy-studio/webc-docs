@@ -1,0 +1,40 @@
+{
+  "name": "@allons-y/webcdoc-lint",
+  "version": "0.1.0-beta.0",
+  "description": "Validates a webcdoc document against its JSON Schema and lints the components in it.",
+  "license": "MPL-2.0",
+  "author": "Cassondra Roberts <1840295+castastrophe@users.noreply.github.com> (https://allons-y.studio)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allonsy-studio/webc-docs.git",
+    "directory": "packages/webcdoc-lint"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "bin": "./dist/bin/cli.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "ci": "yarn build",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@allons-y/webcdoc-schema": "workspace:^",
+    "@allons-y/webcdoc-tools": "workspace:^",
+    "@cfworker/json-schema": "^4.1.4"
+  },
+  "devDependencies": {
+    "@allons-y/webcdoc": "workspace:^"
+  }
+}
