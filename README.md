@@ -7,23 +7,23 @@
 </a>
 </p>
 
-<h1 align="center" border="none">@allons-y/webcdoc</h1>
+<h1 align="center" border="none">webc-docs</h1>
 
 <p align="center">
   <img src="https://github.com/allonsy-studio/.github/blob/main/assets/tag-rule.gif" alt="" height="30" />
 </p>
 
-<p align="center"><b>Documentation metadata for WebC components, from the comments already in the file.</b></p>
+<p align="center"><b></b></p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@allons-y/webcdoc">
-    <img src="https://img.shields.io/npm/v/@allons-y/webcdoc.svg" alt="NPM version" height="20" />
+  <a href="https://www.npmjs.com/package/@allons-y/webc-docs">
+    <img src="https://img.shields.io/npm/v/@allons-y/webc-docs.svg" alt="NPM version" height="20" />
   </a>
-  <a href="https://www.npmjs.com/package/@allons-y/webcdoc">
-    <img src="https://img.shields.io/npm/dw/@allons-y/webcdoc.svg" alt="NPM downloads" height="20" />
+  <a href="https://www.npmjs.com/package/@allons-y/webc-docs">
+    <img src="https://img.shields.io/npm/dw/@allons-y/webc-docs.svg" alt="NPM downloads" height="20" />
   </a>
-  <a href="https://github.com/allonsy-studio/webc-docs/actions/workflows/ci.yml">
-    <img src="https://github.com/allonsy-studio/webc-docs/actions/workflows/ci.yml/badge.svg?branch=main" alt="Tests" height="20" />
+  <a href="https://github.com/allonsy-studio/webc-docs/actions/workflows/testing.yml">
+    <img src="https://github.com/allonsy-studio/webc-docs/actions/workflows/testing.yml/badge.svg?branch=main" alt="Tests" height="20" />
   </a>
   <a href="https://github.com/allonsy-studio/webc-docs/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/allonsy-studio/webc-docs.svg" alt="License" height="20" />
@@ -97,7 +97,7 @@ Node 24 and Yarn 4 (via Corepack). Releases use [changesets](https://github.com/
 
 <h2>Contributing</h2>
 
-Contributions are welcome & appreciated! Please open an [issue](https://github.com/allonsy-studio/webc-docs/issues/new) (before submitting a pull request) if you find a bug, have a feature request, or have a question. Be sure to follow the [contribution guidelines](.github/CONTRIBUTING.md) and [code of conduct](.github/CODE_OF_CONDUCT.md) but most importantly, be excellent to each other. 💖
+Contributions are welcome & appreciated! Please open an [issue](https://github.com/allonsy-studio/webc-docs/issues/new) (before submitting a pull request) if you find a bug, have a feature request, or have a question. Be sure to follow the [contribution guidelines](https://github.com/allonsy-studio/.github/blob/main/CONTRIBUTING.md) and [code of conduct](https://github.com/allonsy-studio/.github/blob/main/CODE_OF_CONDUCT.md) but most importantly, be excellent to each other. 💖
 
 <!-- weaver:contribution:END -->
 
