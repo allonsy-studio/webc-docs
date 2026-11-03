@@ -243,6 +243,9 @@
         },
         "code": {
           "type": "string"
+        },
+        "html": {
+          "type": "string"
         }
       },
       "additionalProperties": false,
@@ -276,7 +279,9 @@
             "default-slot-fallback",
             "prop-undocumented",
             "regular-comment",
-            "host-no-display"
+            "host-no-display",
+            "data-missing",
+            "import-missing"
           ]
         },
         "message": {

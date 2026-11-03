@@ -28,6 +28,7 @@ Run a single workspace with `yarn workspace <name> run <script>`, for example
 ## Layout
 
 - `packages/webcdoc`: `@allons-y/webcdoc`, the parser, CLI, and manifest adapter
+- `plugins/eleventy-plugin-webcdoc`: `@allons-y/eleventy-plugin-webcdoc`, the Eleventy plugin that generates the document inside the build
 - `plugins/cem-plugin-webc`: `@allons-y/cem-plugin-webc`, the Custom Elements Manifest plugin
 - `site`: Eleventy docs site, private, not published to npm
 - `.license-header.js`: header text enforced on `src`, `test`, and `bin` files

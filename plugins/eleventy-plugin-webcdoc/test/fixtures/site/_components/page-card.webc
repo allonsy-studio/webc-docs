@@ -1,0 +1,15 @@
+<!---
+Card that links to a page.
+
+@summary Page card.
+@prop {string} [label=Read more] - Link text.
+@example Default
+<page-card @label="Open"></page-card>
+@example Inside a banner
+<site-banner></site-banner>
+--->
+<div webc:import="./site-banner.webc"></div>
+<div webc:import="./does-not-exist.webc"></div>
+<a href="#" @text="label"></a>
+<p @text="$data.site.subtitle"></p>
+<p @text="$data.page.url"></p>

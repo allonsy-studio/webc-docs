@@ -6,7 +6,7 @@
 import { readFileSync } from "node:fs";
 import { parse } from "@allons-y/webcdoc";
 import { describe, expect, it } from "vitest";
-import { ConfigError, lint, resolveSettings, ruleNames } from "../src/index.js";
+import { ConfigError, lint, resolveSettings, ruleNames, validate } from "../src/index.js";
 import { makeDocument, makeRecord } from "./helpers.js";
 
 const load = (name: string) => parse(readFileSync(new URL(`../../webcdoc/test/fixtures/${name}.webc`, import.meta.url), "utf8"), { path: `components/${name}.webc` });
@@ -59,14 +59,15 @@ describe("lint", () => {
 		]);
 	});
 
-	it("runs no-missing-data and no-missing-import on codes the Eleventy plugin will add", () => {
+	it("runs no-missing-data and no-missing-import on the codes the Eleventy plugin adds", () => {
 		const record = makeRecord("a-a", {
 			summary: "Clean.",
 			warnings: [
-				{ code: "data-missing" as "slot-missing", message: "No data at site.title.", line: 4 },
-				{ code: "import-missing" as "slot-missing", message: "No file ./x.webc.", line: 5 },
+				{ code: "data-missing", message: "No data at site.title.", line: 4 },
+				{ code: "import-missing", message: "No file ./x.webc.", line: 5 },
 			],
 		});
+		expect(validate(makeDocument([record])).valid).toBe(true);
 		expect(lint(makeDocument([record])).findings.map((f) => [f.rule, f.line])).toEqual([
 			["no-missing-data", 4],
 			["no-missing-import", 5],
