@@ -1,0 +1,538 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`fixtures > client 1`] = `
+{
+  "attributes": [],
+  "cssParts": [],
+  "cssProperties": [],
+  "cssStates": [],
+  "demos": [],
+  "deprecated": false,
+  "description": "",
+  "events": [],
+  "examples": [],
+  "path": "components/client.webc",
+  "props": [
+    {
+      "attribute": "@start",
+      "default": "0",
+      "description": "Initial count.",
+      "name": "start",
+      "optional": true,
+      "property": "start",
+      "type": {
+        "text": "number",
+      },
+    },
+  ],
+  "slots": [],
+  "summary": "Click counter.",
+  "tagName": "client",
+  "tags": {},
+  "warnings": [],
+  "webc": {
+    "clientScript": true,
+    "host": {
+      "reason": "script",
+      "rendered": true,
+    },
+    "imports": [],
+    "references": {
+      "data": [],
+      "helpers": [],
+      "loops": [],
+      "props": [
+        {
+          "in": "template",
+          "line": 5,
+          "name": "start",
+        },
+      ],
+      "setup": [],
+      "unresolved": [],
+      "webc": [],
+    },
+    "setup": {
+      "exports": [],
+      "imports": [],
+    },
+    "shadowDom": false,
+    "styles": {
+      "present": false,
+      "scope": null,
+    },
+    "transforms": [],
+    "uses": [],
+  },
+}
+`;
+
+exports[`fixtures > data-coupled 1`] = `
+{
+  "attributes": [],
+  "cssParts": [],
+  "cssProperties": [],
+  "cssStates": [],
+  "demos": [],
+  "deprecated": false,
+  "description": "Lists site pages.",
+  "events": [],
+  "examples": [],
+  "path": "components/data-coupled.webc",
+  "props": [
+    {
+      "attribute": "@items",
+      "default": undefined,
+      "description": "Pages to list.",
+      "name": "items",
+      "optional": false,
+      "property": "items",
+      "type": {
+        "text": "array",
+      },
+    },
+  ],
+  "slots": [],
+  "summary": "",
+  "tagName": "data-coupled",
+  "tags": {},
+  "warnings": [
+    {
+      "code": "prop-undocumented",
+      "line": 10,
+      "message": ""foo" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+    },
+  ],
+  "webc": {
+    "clientScript": false,
+    "host": {
+      "reason": "none",
+      "rendered": false,
+    },
+    "imports": [],
+    "references": {
+      "data": [
+        {
+          "in": "template",
+          "line": 6,
+          "path": "site.title",
+        },
+      ],
+      "helpers": [
+        {
+          "in": "template",
+          "line": 9,
+          "name": "url",
+        },
+      ],
+      "loops": [
+        {
+          "in": "template",
+          "line": 9,
+          "name": "item",
+        },
+      ],
+      "props": [
+        {
+          "in": "template",
+          "line": 8,
+          "name": "items",
+        },
+      ],
+      "setup": [],
+      "unresolved": [
+        {
+          "in": "template",
+          "line": 10,
+          "name": "foo",
+        },
+      ],
+      "webc": [
+        {
+          "in": "template",
+          "line": 10,
+          "name": "webc.filePath",
+        },
+      ],
+    },
+    "setup": {
+      "exports": [],
+      "imports": [],
+    },
+    "shadowDom": false,
+    "styles": {
+      "present": false,
+      "scope": null,
+    },
+    "transforms": [],
+    "uses": [],
+  },
+}
+`;
+
+exports[`fixtures > header-only 1`] = `
+{
+  "attributes": [
+    {
+      "default": "status",
+      "description": "Landmark role on the host.",
+      "name": "role",
+      "optional": true,
+      "type": {
+        "text": "string",
+      },
+    },
+  ],
+  "cssParts": [
+    {
+      "description": "The content wrapper.",
+      "name": "body",
+    },
+  ],
+  "cssProperties": [],
+  "cssStates": [
+    {
+      "description": "Set after the close button is used.",
+      "name": "dismissed",
+    },
+  ],
+  "demos": [
+    {
+      "description": "Live demo.",
+      "url": "https://example.com/notice",
+    },
+  ],
+  "deprecated": "Use alert-box instead.",
+  "description": "A dismissible notice banner.",
+  "events": [
+    {
+      "description": "Emitted when the notice closes.",
+      "name": "dismiss",
+      "type": {
+        "text": "CustomEvent",
+      },
+    },
+  ],
+  "examples": [],
+  "path": "components/header-only.webc",
+  "props": [
+    {
+      "attribute": "@tone",
+      "default": "info",
+      "description": "Visual tone: info, success, or warning.",
+      "name": "tone",
+      "optional": true,
+      "property": "tone",
+      "type": {
+        "text": "string",
+      },
+    },
+    {
+      "attribute": "@dismissible",
+      "default": "false",
+      "description": "Show a close button.",
+      "name": "dismissible",
+      "optional": true,
+      "property": "dismissible",
+      "type": {
+        "text": "boolean",
+      },
+    },
+  ],
+  "slots": [
+    {
+      "description": "Notice content.",
+      "hasFallback": true,
+      "name": "",
+      "source": "template",
+    },
+    {
+      "description": "Optional button area.",
+      "hasFallback": false,
+      "name": "action",
+      "source": "template",
+    },
+  ],
+  "summary": "Inline notice.",
+  "tagName": "header-only",
+  "tags": {
+    "author": [
+      {
+        "description": "Studio",
+        "name": "Allons-y",
+      },
+    ],
+  },
+  "warnings": [
+    {
+      "code": "slot-missing",
+      "line": 11,
+      "message": "Slot "ghost" is documented but the template has no <slot> for it.",
+    },
+    {
+      "code": "default-slot-fallback",
+      "line": 19,
+      "message": "Default slot has fallback content, which renders only when the host has no child nodes at all, whitespace included.",
+    },
+  ],
+  "webc": {
+    "clientScript": false,
+    "host": {
+      "reason": "none",
+      "rendered": false,
+    },
+    "imports": [],
+    "references": {
+      "data": [],
+      "helpers": [],
+      "loops": [],
+      "props": [
+        {
+          "in": "template",
+          "line": 18,
+          "name": "tone",
+        },
+      ],
+      "setup": [],
+      "unresolved": [],
+      "webc": [],
+    },
+    "setup": {
+      "exports": [],
+      "imports": [],
+    },
+    "shadowDom": false,
+    "styles": {
+      "present": false,
+      "scope": null,
+    },
+    "transforms": [],
+    "uses": [],
+  },
+}
+`;
+
+exports[`fixtures > skip-link 1`] = `
+{
+  "attributes": [],
+  "cssParts": [
+    {
+      "description": "The anchor element, for consumers styling it from outside.",
+      "name": "link",
+    },
+  ],
+  "cssProperties": [
+    {
+      "default": "CanvasText",
+      "description": "Background when focused.",
+      "name": "--skip-link-bg",
+      "syntax": "<color>",
+    },
+  ],
+  "cssStates": [],
+  "demos": [],
+  "deprecated": false,
+  "description": "A link to the main content region, placed first in the page.",
+  "events": [],
+  "examples": [
+    {
+      "code": "<skip-link></skip-link>",
+      "title": "Default",
+    },
+    {
+      "code": "<skip-link @target="#content" @label="Jump to article"></skip-link>",
+      "title": "Custom target",
+    },
+  ],
+  "path": "components/skip-link.webc",
+  "props": [
+    {
+      "attribute": "@label",
+      "default": "Skip to content",
+      "description": "Visible text of the link.",
+      "name": "label",
+      "optional": true,
+      "property": "label",
+      "type": {
+        "text": "string",
+      },
+    },
+    {
+      "attribute": "@target",
+      "default": "#main",
+      "description": "Id of the region to jump to.",
+      "name": "target",
+      "optional": true,
+      "property": "target",
+      "type": {
+        "text": "string",
+      },
+    },
+    {
+      "attribute": "@sticky",
+      "default": "false",
+      "description": "Keep the link visible once focused.",
+      "name": "sticky",
+      "optional": true,
+      "property": "sticky",
+      "type": {
+        "text": "boolean",
+      },
+    },
+  ],
+  "slots": [
+    {
+      "description": "Decorative icon shown before the label.",
+      "hasFallback": false,
+      "name": "icon",
+      "source": "template",
+    },
+  ],
+  "summary": "Skip-to-content link.",
+  "tagName": "skip-link",
+  "tags": {
+    "since": [
+      {
+        "description": "",
+        "name": "0.2.0",
+      },
+    ],
+  },
+  "warnings": [],
+  "webc": {
+    "clientScript": false,
+    "host": {
+      "reason": "style",
+      "rendered": true,
+    },
+    "imports": [],
+    "references": {
+      "data": [],
+      "helpers": [],
+      "loops": [],
+      "props": [
+        {
+          "in": "template",
+          "line": 19,
+          "name": "target",
+        },
+        {
+          "in": "template",
+          "line": 19,
+          "name": "sticky",
+        },
+        {
+          "in": "template",
+          "line": 19,
+          "name": "label",
+        },
+      ],
+      "setup": [
+        {
+          "in": "template",
+          "line": 19,
+          "name": "isOn",
+        },
+      ],
+      "unresolved": [],
+      "webc": [],
+    },
+    "setup": {
+      "exports": [
+        {
+          "description": "Normalize a WebC boolean prop ("", "true", true all mean on).",
+          "kind": "function",
+          "name": "isOn",
+        },
+      ],
+      "imports": [],
+    },
+    "shadowDom": false,
+    "styles": {
+      "present": true,
+      "scope": "webc:scoped",
+    },
+    "transforms": [],
+    "uses": [],
+  },
+}
+`;
+
+exports[`fixtures > undocumented 1`] = `
+{
+  "attributes": [],
+  "cssParts": [],
+  "cssProperties": [],
+  "cssStates": [],
+  "demos": [],
+  "deprecated": false,
+  "description": "",
+  "events": [],
+  "examples": [],
+  "path": "components/undocumented.webc",
+  "props": [],
+  "slots": [
+    {
+      "description": "",
+      "hasFallback": false,
+      "name": "",
+      "source": "template",
+    },
+    {
+      "description": "",
+      "hasFallback": true,
+      "name": "footer",
+      "source": "template",
+    },
+  ],
+  "summary": "",
+  "tagName": "undocumented",
+  "tags": {},
+  "warnings": [
+    {
+      "code": "prop-undocumented",
+      "line": 3,
+      "message": ""title" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+    },
+    {
+      "code": "regular-comment",
+      "line": 1,
+      "message": "1 regular comment ships to output; use <!--- ---> to keep a comment server-side.",
+    },
+  ],
+  "webc": {
+    "clientScript": false,
+    "host": {
+      "reason": "none",
+      "rendered": false,
+    },
+    "imports": [],
+    "references": {
+      "data": [],
+      "helpers": [],
+      "loops": [],
+      "props": [],
+      "setup": [],
+      "unresolved": [
+        {
+          "in": "template",
+          "line": 3,
+          "name": "title",
+        },
+      ],
+      "webc": [],
+    },
+    "setup": {
+      "exports": [],
+      "imports": [],
+    },
+    "shadowDom": false,
+    "styles": {
+      "present": false,
+      "scope": null,
+    },
+    "transforms": [],
+    "uses": [],
+  },
+}
+`;

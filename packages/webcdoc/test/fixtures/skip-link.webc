@@ -1,0 +1,25 @@
+<!---
+A link to the main content region, placed first in the page.
+
+@summary Skip-to-content link.
+@prop {string} [label=Skip to content] - Visible text of the link.
+@prop {string} [target=#main] - Id of the region to jump to.
+@prop {boolean} [sticky=false] - Keep the link visible once focused.
+@cssprop {<color>} [--skip-link-bg=CanvasText] - Background when focused.
+@example Default
+<skip-link></skip-link>
+@example Custom target
+<skip-link @target="#content" @label="Jump to article"></skip-link>
+@since 0.2.0
+--->
+<script webc:setup>
+  /** Normalize a WebC boolean prop ("", "true", true all mean on). */
+  const isOn = (v) => v === true || v === '' || v === 'true';
+</script>
+<a :href="target" :class="isOn(sticky) ? 'is-sticky' : ''" @text="label"></a>
+<!--- @slot icon - Decorative icon shown before the label. --->
+<slot name="icon"></slot>
+<style webc:scoped>
+  /** @csspart link - The anchor element, for consumers styling it from outside. */
+  :host a:focus { background: var(--skip-link-bg); }
+</style>

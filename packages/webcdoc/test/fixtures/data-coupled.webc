@@ -1,0 +1,12 @@
+<!---
+Lists site pages.
+
+@prop {array} items - Pages to list.
+--->
+<h1 @text="$data.site.title"></h1>
+<ul>
+  <li webc:for="item of items">
+    <a :href="url('/x')" @text="item.title"></a>
+    <span :class="foo" @text="webc.filePath"></span>
+  </li>
+</ul>

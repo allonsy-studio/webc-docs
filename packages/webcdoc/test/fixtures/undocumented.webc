@@ -1,0 +1,6 @@
+<!-- ships to output -->
+<section>
+  <h2 @text="title"></h2>
+  <slot></slot>
+  <slot name="footer"><p>Default footer</p></slot>
+</section>
