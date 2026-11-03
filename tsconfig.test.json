@@ -1,5 +1,19 @@
 {
 	"extends": "./tsconfig.base.json",
-	"compilerOptions": { "noEmit": true, "declaration": false, "declarationMap": false },
-	"include": ["packages/*/src", "packages/*/test", "plugins/*/src", "plugins/*/test"]
+	"compilerOptions": {
+		"noEmit": true,
+		"declaration": false,
+		"declarationMap": false,
+		"paths": {
+			"custom-elements-manifest/schema": [
+				"./node_modules/custom-elements-manifest/schema.d.ts"
+			]
+		}
+	},
+	"include": [
+		"packages/*/src",
+		"packages/*/test",
+		"plugins/*/src",
+		"plugins/*/test"
+	]
 }
