@@ -1,0 +1,48 @@
+{
+  "name": "@allons-y/eleventy-plugin-webcdoc",
+  "version": "0.1.0-beta.0",
+  "description": "Eleventy plugin that generates webcdoc documentation for WebC components, with the host's helpers and data in view.",
+  "license": "MPL-2.0",
+  "author": "Cassondra Roberts <1840295+castastrophe@users.noreply.github.com> (https://allons-y.studio)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allonsy-studio/webc-docs.git",
+    "directory": "plugins/eleventy-plugin-webcdoc"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/webc": "^0.11.0"
+  },
+  "peerDependenciesMeta": {
+    "@11ty/webc": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "ci": "yarn build",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@allons-y/webcdoc": "workspace:^"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8",
+    "@11ty/eleventy-plugin-webc": "^0.11.2",
+    "@11ty/webc": "^0.11.4"
+  }
+}
