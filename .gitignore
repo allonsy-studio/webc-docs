@@ -56,3 +56,6 @@ types
 
 # Claude
 .claude/worktrees/*
+
+# Eleventy output
+_site
