@@ -23,6 +23,7 @@
     "prepare": "husky",
     "release": "yarn build && changeset publish",
     "test": "yarn workspaces foreach -A run test",
+    "typecheck": "tsc -p tsconfig.test.json",
     "version": "changeset version && yarn install --mode update-lockfile"
   },
   "devDependencies": {
@@ -40,7 +41,6 @@
     "eslint": "^10.8.0",
     "eslint-plugin-license-header": "^0.9.0",
     "husky": "^9.1.7",
-    "lint-staged": "^17.3.0",
     "typescript": "^5.9.3",
     "vite": "^8.3.5",
     "vitest": "^5.1.0"
@@ -53,14 +53,5 @@
     "maintained node versions",
     "not dead"
   ],
-  "lint-staged": {
-    "*": [
-      "yarn g:lint --fix"
-    ],
-    "*.css": [
-      "yarn g:lint:styles --fix"
-    ],
-    ".github/renovate.json": "npx --yes --package renovate -- renovate-config-validator --strict"
-  },
   "packageManager": "yarn@4.18.1"
 }
