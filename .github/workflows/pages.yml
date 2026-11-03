@@ -1,0 +1,17 @@
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  pages:
+    uses: allonsy-studio/.github/.github/workflows/pages.yml@main
+    with:
+      output-dir: site/_site
