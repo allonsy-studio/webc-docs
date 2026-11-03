@@ -14,5 +14,4 @@ jobs:
   pages:
     uses: allonsy-studio/.github/.github/workflows/pages.yml@main
     with:
-      build-command: yarn workspace @allons-y/webc-docs-site run ci
       output-dir: site/_site

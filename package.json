@@ -16,6 +16,7 @@
   ],
   "scripts": {
     "build": "yarn workspaces foreach -A --topological run build",
+    "ci": "yarn workspaces foreach -A --topological run ci",
     "format": "opx lint --fix",
     "lint": "opx lint",
     "prepare": "husky",
