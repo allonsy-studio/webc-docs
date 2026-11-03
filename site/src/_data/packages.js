@@ -17,7 +17,7 @@ const SHIPPED = [
 	{ dir: "packages/webcdoc-tools" },
 	{ dir: "packages/webcdoc-lint" },
 	{ dir: "plugins/eleventy-plugin-webcdoc", recommended: true },
-	{ dir: "plugins/cem-plugin-webc", summary: "Custom Elements Manifest analyzer plugin for .webc files. Not implemented yet." },
+	{ dir: "plugins/cem-plugin-webc", summary: "Custom Elements Manifest analyzer plugin that reads .webc files, for projects already running the analyzer." },
 ];
 
 const md = new MarkdownIt({ html: true });

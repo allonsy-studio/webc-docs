@@ -1,0 +1,9 @@
+<!--- @summary Line check. --->
+
+<p>Hello</p>
+
+<script>
+	// comment
+	class LineCheck extends HTMLElement {}
+	customElements.define("line-check", LineCheck);
+</script>
