@@ -43,6 +43,7 @@ webcdoc reads a `.webc` file and writes one JSON record describing the component
 | --- | --- |
 | [`@allons-y/webcdoc-schema`](packages/webcdoc-schema) | TypeScript types and the JSON Schema for the record and the grouped document |
 | [`@allons-y/webcdoc`](packages/webcdoc) | The parser, the `webcdoc` CLI, and a Custom Elements Manifest adapter |
+| [`@allons-y/webcdoc-tools`](packages/webcdoc-tools) | Pure helpers for filtering, looking up, and ordering the components in a webcdoc document |
 | [`@allons-y/cem-plugin-webc`](plugins/cem-plugin-webc) | A Custom Elements Manifest analyzer plugin that reads `.webc` files; opt-in for projects already running the analyzer |
 
 The documentation site lives in [`site`](site) and is not published.
