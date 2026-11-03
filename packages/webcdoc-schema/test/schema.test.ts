@@ -16,6 +16,7 @@ describe("schema package", () => {
 	it("lists every warning code", () => {
 		const defs = read("../schema.json").$defs;
 		expect(defs.warning.properties.code.enum).toContain("prop-undocumented");
+		expect(defs.warning.properties.code.enum).toEqual(expect.arrayContaining(["data-missing", "import-missing"]));
 		expect(defs.packageWarning.properties.code.const).toBe("duplicate-tag");
 	});
 });

@@ -29,7 +29,9 @@ export type WarningCode =
 	| "prop-undocumented"
 	| "regular-comment"
 	| "duplicate-tag"
-	| "host-no-display";
+	| "host-no-display"
+	| "data-missing"
+	| "import-missing";
 
 export interface TypeInfo {
 	text: string;
@@ -70,6 +72,8 @@ export interface EventItem extends NamedItem {
 export interface ExampleItem {
 	title: string;
 	code: string;
+	/** Rendered output, added by a host that compiles examples. */
+	html?: string;
 }
 export interface DemoItem {
 	url: string;
