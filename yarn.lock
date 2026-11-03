@@ -377,6 +377,7 @@ __metadata:
     "@allons-y/webc-code-sample": "npm:0.1.0-beta.1"
     "@allons-y/webc-oss-site": "npm:0.1.0-beta.1"
     "@allons-y/webc-patterns": "npm:0.1.0-beta.1"
+    markdown-it: "npm:^15.0.2"
   languageName: unknown
   linkType: soft
 
