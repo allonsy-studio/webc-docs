@@ -49,7 +49,7 @@
     },
     {
       "title": "@allons-y/cem-plugin-webc",
-      "description": "A Custom Elements Manifest analyzer plugin for .webc files. Not yet implemented.",
+      "description": "A Custom Elements Manifest analyzer plugin that reads .webc files.",
       "href": "https://github.com/allonsy-studio/webc-docs/tree/main/plugins/cem-plugin-webc"
     }
   ]

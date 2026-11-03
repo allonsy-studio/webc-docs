@@ -18,4 +18,4 @@ description: The Eleventy plugin, the linter, the tools, and the Custom Elements
 
 ## Custom Elements Manifest
 
-`@allons-y/cem-plugin-webc` will let a project that already runs the Custom Elements Manifest analyzer read `.webc` files in the same run. It is not implemented yet, so the package is a placeholder for now.
+`@allons-y/cem-plugin-webc` lets a project that already runs the Custom Elements Manifest analyzer read `.webc` files in the same run. Add `webcModuleCreation()` as `overrideModuleCreation` and `webcPlugin()` to `plugins`, and each component lands in `custom-elements.json` with its slots, CSS properties, parts, and attributes.
