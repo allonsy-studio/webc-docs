@@ -3,21 +3,15 @@
  * Copyright (c) 2026 Allons-y Studio
  */
 
+import path from "node:path";
+
 import { HtmlBasePlugin } from "@11ty/eleventy";
 import { fillHooks } from "@allons-y/webc-patterns/plugin";
 import oss, { ossProps } from "@allons-y/webc-oss-site";
-import { patterns } from "@allons-y/webc-patterns";
 import webcdocPlugin from "@allons-y/eleventy-plugin-webcdoc";
 import dashly from "@allons-y/dashly";
 
-/** Docs pages in sidebar order: the components index, each component, then the plugins page. */
-const DOCS_RANK = (page) => {
-	if (page.inputPath.endsWith("components/index.webc")) return 0;
-	if (page.inputPath.includes("/components/")) return 1;
-	return 2;
-};
-
-/** Sidebar entries for the docs layout. */
+/** Sidebar entries for the docs layout, in their `order`. */
 const docsOf = (data) =>
 	(data.collections?.docs ?? []).map((page) => ({
 		href: page.url,
@@ -32,6 +26,7 @@ export default function (eleventyConfig) {
 			title: data.title,
 			description: data.description ?? data.site?.description,
 			docs: docsOf(data),
+			packages: (data.packages ?? []).map((pkg) => ({ title: pkg.name, description: pkg.description, href: pkg.url })),
 		}),
 	});
 	fillHooks(eleventyConfig, {
@@ -43,12 +38,12 @@ export default function (eleventyConfig) {
 
 	eleventyConfig.addCollection("docs", (api) =>
 		api
-			.getFilteredByGlob(["src/components/**/*.webc", "src/plugins.md"])
-			.sort((a, b) => DOCS_RANK(a) - DOCS_RANK(b) || a.url.localeCompare(b.url)),
+			.getFilteredByGlob(["src/packages/**/*.webc", "src/comment-format.webc"])
+			.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0)),
 	);
 
 	eleventyConfig.addPlugin(webcdocPlugin, {
-		components: [patterns()],
+		components: [path.join(import.meta.dirname, "_components", "**", "*.webc")],
 	});
 
 	return {
