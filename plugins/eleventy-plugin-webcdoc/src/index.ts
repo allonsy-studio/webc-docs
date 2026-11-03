@@ -5,10 +5,11 @@
 
 import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { SCHEMA_VERSION } from "@allons-y/webcdoc";
 import type { WebcdocDocument } from "@allons-y/webcdoc";
 import { expandComponents } from "./components.js";
 import { loadGlobalData } from "./data.js";
-import { generateDocument } from "./generate.js";
+import { VERSION, generateDocument } from "./generate.js";
 import { collectHelpers } from "./helpers.js";
 import { DEFAULT_COMPONENTS, resolveOptions } from "./options.js";
 import type { BuildEvent, EleventyConfigLike, TemplateConfigLike, WebcdocPluginOptions } from "./types.js";
@@ -33,8 +34,10 @@ export default function webcdocPlugin(eleventyConfig: EleventyConfigLike, userOp
 
 	let templateConfig: TemplateConfigLike | undefined;
 	let extensionMap: unknown;
-	let current: Promise<WebcdocResult> = Promise.reject(new Error("webcdoc: the document is built when Eleventy starts a build."));
-	current.catch(() => {});
+	// Resolved until a build starts, so anything that reads the global data early gets an empty document instead of a rejection.
+	let current: Promise<WebcdocResult> = Promise.resolve({
+		document: { schemaVersion: SCHEMA_VERSION, generator: `@allons-y/eleventy-plugin-webcdoc@${VERSION}`, package: {}, helpers: [], components: [], warnings: [] },
+	});
 
 	eleventyConfig.on("eleventy.config", ((cfg: TemplateConfigLike) => {
 		templateConfig = cfg;
