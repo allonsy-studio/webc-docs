@@ -1,0 +1,11 @@
+<!---
+A plain card.
+
+@summary Card.
+@slot footer - Footer content.
+@prop {string} [heading] - Heading text.
+--->
+<article><h2 @text="heading"></h2><slot name="footer"></slot></article>
+<style>
+	:host { display: block; }
+</style>

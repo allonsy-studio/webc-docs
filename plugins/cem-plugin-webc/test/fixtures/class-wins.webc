@@ -1,0 +1,17 @@
+<!---
+Header description.
+
+@summary Header summary.
+@slot icon - Header icon description.
+@csspart label - Header part.
+--->
+<span part="label"><slot name="icon"></slot></span>
+<script>
+	/**
+	 * Class description.
+	 *
+	 * @slot icon - Class icon description.
+	 */
+	class ClassWins extends HTMLElement {}
+	customElements.define("class-wins", ClassWins);
+</script>

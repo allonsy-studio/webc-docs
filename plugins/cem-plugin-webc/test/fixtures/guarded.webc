@@ -1,0 +1,24 @@
+<!---
+A toggle button that remembers its state.
+
+@summary Toggle button.
+@prop {boolean} [pressed=false] - Whether the button starts pressed.
+@slot - Label of the button.
+@slot icon - Icon shown before the label.
+@cssprop {<color>} [--tog-bg=Canvas] - Background color.
+@csspart button - The inner button.
+--->
+<button part="button"><slot></slot><slot name="icon"></slot></button>
+<script>
+	{
+		/** Toggle element. */
+		class TogButton extends HTMLElement {
+			connectedCallback() {
+				this.hidden = false;
+			}
+		}
+		if (!customElements.get("tog-button")) {
+			customElements.define("tog-button", TogButton);
+		}
+	}
+</script>
