@@ -256,6 +256,10 @@ __metadata:
     "@allons-y/webcdoc": "workspace:^"
   peerDependencies:
     "@11ty/eleventy": ^3.0.0
+    "@11ty/webc": ^0.11.0
+  peerDependenciesMeta:
+    "@11ty/webc":
+      optional: true
   languageName: unknown
   linkType: soft
 
