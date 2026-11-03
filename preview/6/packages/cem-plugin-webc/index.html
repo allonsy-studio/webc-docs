@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>@layer norn.reset, norn.base, norn.layout, norn.components, norn.oss, norn.print;</style>
 <title>@allons-y/cem-plugin-webc: webc-docs</title>
-<meta name="description" content="Custom Elements Manifest analyzer plugin for .webc files. Not implemented yet.">
+<meta name="description" content="Custom Elements Manifest analyzer plugin that reads .webc files, for projects already running the analyzer.">
 <link rel="canonical" href="https://projects.allons-y.studio/webc-docs/">
 <meta name="color-scheme" content="light dark">
 
@@ -16,7 +16,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="webc-docs: Documentation metadata for WebC components, from the comments already in the file">
-<meta property="og:description" content="Custom Elements Manifest analyzer plugin for .webc files. Not implemented yet.">
+<meta property="og:description" content="Custom Elements Manifest analyzer plugin that reads .webc files, for projects already running the analyzer.">
 <meta property="og:url" content="https://projects.allons-y.studio/webc-docs/">
 
 
@@ -54,7 +54,7 @@
 			</a>
 	<details>
 		<summary>Menu</summary>
-		<nav aria-labelledby="norn-header-webc-8zu5b"><span data-label="" id="norn-header-webc-8zu5b">Primary</span>
+		<nav aria-labelledby="norn-header-webc-taVvE"><span data-label="" id="norn-header-webc-taVvE">Primary</span>
 			
 			<a href="/webc-docs/preview/6/packages/webcdoc-schema/"><norn-icon>
 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -73,12 +73,12 @@
 <norn-sidebar-layout><div>
 	<details>
 		<summary><span>Documentation</span></summary>
-		<norn-side-nav><nav aria-labelledby="norn-side-nav-webc-_QQeO">
-	<span data-label="" id="norn-side-nav-webc-_QQeO"><span>Documentation</span></span>
-	<norn-search><search aria-labelledby="norn-search-webc-xJgP1" data-bundle="/webc-docs/preview/6/pagefind/pagefind.js">
+		<norn-side-nav><nav aria-labelledby="norn-side-nav-webc-peK9_">
+	<span data-label="" id="norn-side-nav-webc-peK9_"><span>Documentation</span></span>
+	<norn-search><search aria-labelledby="norn-search-webc-spBRN" data-bundle="/webc-docs/preview/6/pagefind/pagefind.js">
 	<form action="https://duckduckgo.com/" method="get">
 		<label>
-			<span id="norn-search-webc-xJgP1"><span>Search the docs</span></span>
+			<span id="norn-search-webc-spBRN"><span>Search the docs</span></span>
 			<norn-icon>
 <svg viewBox="0 0 24 24" aria-hidden="true">
 	<path d="M18 11a7 7 0 1 1-14 0a7 7 0 1 1 14 0M21 21l-5-5"></path>
@@ -137,7 +137,7 @@
   The source is in <a href="https://github.com/allonsy-studio/webc-docs/tree/main/plugins/cem-plugin-webc">its folder on GitHub</a>.
 </p>
 <div class="readme"><p>Custom Elements Manifest analyzer plugin that reads <code>.webc</code> files, so a project already running the analyzer gets WebC components in the same <code>custom-elements.json</code>.</p>
-<p>Status: pre-release (<code>0.1.0-beta.0</code>). The plugin is not implemented yet.</p>
+<p>Status: pre-release (<code>0.1.0-beta.0</code>).</p>
 <h2>Install</h2>
 <pre><code class="language-sh">yarn add --dev @allons-y/cem-plugin-webc @custom-elements-manifest/analyzer
 </code></pre>
@@ -151,6 +151,40 @@ export default {
 	plugins: [webcPlugin()],
 };
 </code></pre>
+<p>Run <code>custom-elements-manifest analyze</code> as usual. Each <code>.webc</code> file becomes a module in <code>custom-elements.json</code> with one custom element declaration, and JS and TS files are analyzed exactly as before.</p>
+<h2>Options</h2>
+<p>Both functions take the same optional settings.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cwd</code></td>
+<td><code>process.cwd()</code></td>
+<td>Directory the analyzer's globs are relative to. Pass the same value to both functions.</td>
+</tr>
+<tr>
+<td><code>helpers</code></td>
+<td>the <code>@allons-y/webcdoc</code> default list</td>
+<td><code>webcPlugin</code> only. Names a host provides, so calls to them are not reported as unresolved.</td>
+</tr>
+</tbody>
+</table>
+<h2>How it works</h2>
+<p>The analyzer reads JavaScript, so <code>webcModuleCreation</code> gives it one virtual source file per <code>.webc</code> file. The file holds the client <code>&lt;script&gt;</code> body, padded with blank lines so positions match the <code>.webc</code> line numbers. A file with no client script becomes an empty module.</p>
+<p><code>webcPlugin</code> then parses the same file with <code>@allons-y/webcdoc</code> and merges the result into that module:</p>
+<ul>
+<li>A class the analyzer found, linked through <code>customElements.define</code> (including a <code>define</code> inside a block or an <code>if</code> guard), keeps everything it documents.</li>
+<li><code>summary</code>, <code>description</code>, <code>attributes</code>, <code>slots</code>, <code>cssProperties</code>, <code>cssParts</code>, <code>cssStates</code>, and <code>events</code> come from the <code>.webc</code> documentation only where the class has none.</li>
+<li>When no <code>define</code> call exists, or the file has no script, the tag name comes from the file name (or <code>@tag</code>) and the plugin adds the declaration and its <code>custom-element-definition</code> export.</li>
+<li>WebC facts such as the rendered host tag, setup exports, references, examples, and tags go under a <code>webc</code> key on the declaration.</li>
+</ul>
+<p>Parser warnings print to the analyzer's dev log (<code>--dev</code>) as <code>[WEBC] path:line code message</code>.</p>
 <h2>Requirements</h2>
 <ul>
 <li>Node.js ≥ 24</li>
