@@ -5,7 +5,7 @@
 
 import { describe, expect, it } from "vitest";
 import { dependenciesOf, resolveUses, topologicalOrder } from "../src/index.js";
-import { cyclicDocument, makeDocument, makeRecord, sampleDocument } from "./fixtures.js";
+import { cyclicDocument, makeDocument, makeRecord, sampleDocument } from "./helpers.js";
 
 describe("resolveUses", () => {
 	const graph = resolveUses(sampleDocument());
