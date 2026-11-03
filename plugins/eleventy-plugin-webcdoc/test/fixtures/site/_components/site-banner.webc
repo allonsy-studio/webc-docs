@@ -1,0 +1,11 @@
+<!---
+Banner that shows the site title.
+
+@summary Site title banner.
+@example Default
+<site-banner></site-banner>
+--->
+<header>
+	<h1 @text="$data.site.title"></h1>
+	<p :class="shout('hi')">Welcome</p>
+</header>
