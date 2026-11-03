@@ -7,7 +7,7 @@
 </a>
 </p>
 
-<h1 align="center" border="none">webc-docs</h1>
+<h1 align="center" border="none">@allons-y/webcdoc</h1>
 
 <p align="center">
   <img src="https://github.com/allonsy-studio/.github/blob/main/assets/tag-rule.gif" alt="" height="30" />
