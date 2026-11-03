@@ -1,0 +1,15 @@
+<!---
+@summary Click counter.
+@prop {number} [start=0] - Initial count.
+--->
+<button type="button" :data-start="start">0</button>
+<script>
+  {
+    class ClickCounter extends HTMLElement {
+      connectedCallback() {}
+    }
+    if (!customElements.get('client')) {
+      customElements.define('client', ClickCounter);
+    }
+  }
+</script>

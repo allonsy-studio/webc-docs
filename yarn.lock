@@ -230,9 +230,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@allons-y/webcdoc-schema@workspace:^, @allons-y/webcdoc-schema@workspace:packages/webcdoc-schema":
+  version: 0.0.0-use.local
+  resolution: "@allons-y/webcdoc-schema@workspace:packages/webcdoc-schema"
+  languageName: unknown
+  linkType: soft
+
 "@allons-y/webcdoc@workspace:packages/webcdoc":
   version: 0.0.0-use.local
   resolution: "@allons-y/webcdoc@workspace:packages/webcdoc"
+  dependencies:
+    "@allons-y/webcdoc-schema": "workspace:^"
+    comment-parser: "npm:^1.4.9"
+    custom-elements-manifest: "npm:^2.1.0"
+    parse5: "npm:^8.1.0"
   bin:
     webcdoc: ./dist/bin/cli.js
   languageName: unknown
@@ -1404,6 +1415,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"comment-parser@npm:^1.4.9":
+  version: 1.4.9
+  resolution: "comment-parser@npm:1.4.9"
+  checksum: 10c0/bf81563f8588a9de7f1b49f46c8660899147c8313a01a5c48cc88a89a401c68952004cdd15644f21d9fb10c1f21e63366dc8627468a576d5d3400ee5ca7178a4
+  languageName: node
+  linkType: hard
+
 "concat-map@npm:0.0.1":
   version: 0.0.1
   resolution: "concat-map@npm:0.0.1"
@@ -1419,6 +1437,13 @@ __metadata:
     shebang-command: "npm:^2.0.0"
     which: "npm:^2.0.1"
   checksum: 10c0/053ea8b2135caff68a9e81470e845613e374e7309a47731e81639de3eaeb90c3d01af0e0b44d2ab9d50b43467223b88567dfeb3262db942dc063b9976718ffc1
+  languageName: node
+  linkType: hard
+
+"custom-elements-manifest@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "custom-elements-manifest@npm:2.1.0"
+  checksum: 10c0/cc671f8b9f7bdcc481a3f20c24a5532f61c7f879f59ff652b1edd3923c99f35a5cf942b842380f34d1f123a9037e93ef8ecd4264b043ac40a27fd6b1835d6062
   languageName: node
   linkType: hard
 
@@ -1580,6 +1605,13 @@ __metadata:
   version: 6.0.1
   resolution: "entities@npm:6.0.1"
   checksum: 10c0/ed836ddac5acb34341094eb495185d527bd70e8632b6c0d59548cbfa23defdbae70b96f9a405c82904efa421230b5b3fd2283752447d737beffd3f3e6ee74414
+  languageName: node
+  linkType: hard
+
+"entities@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "entities@npm:9.0.0"
+  checksum: 10c0/ef713ce6256d2d878390376f0c42e6ccfeee9032c57c48bd224b9a48f8eb44d4403ad4321d1aeebe973fb08eac8ab324abeebc04a92748c0bac9261968e6d395
   languageName: node
   linkType: hard
 
@@ -3360,6 +3392,15 @@ __metadata:
   version: 1.0.2
   resolution: "parse-srcset@npm:1.0.2"
   checksum: 10c0/2f268e3d110d4c53d06ed2a8e8ee61a7da0cee13bf150819a6da066a8ca9b8d15b5600d6e6cae8be940e2edc50ee7c1e1052934d6ec858324065ecef848f0497
+  languageName: node
+  linkType: hard
+
+"parse5@npm:^8.1.0":
+  version: 8.1.0
+  resolution: "parse5@npm:8.1.0"
+  dependencies:
+    entities: "npm:^9.0.0"
+  checksum: 10c0/2b00189fbeb73a47422bed831b970502258a44dc53134c0db8e2d3114cec0766fea5346dbb61aff94978c6bf666e5243bc5bcb2279b680f130f8de98cd28ac18
   languageName: node
   linkType: hard
 

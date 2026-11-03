@@ -1,0 +1,21 @@
+<!---
+A dismissible notice banner.
+
+@summary Inline notice.
+@deprecated Use alert-box instead.
+@prop {string} [tone=info] - Visual tone: info, success, or warning.
+@prop {boolean} [dismissible=false] - Show a close button.
+@attr {string} [role=status] - Landmark role on the host.
+@slot - Notice content.
+@slot action - Optional button area.
+@slot ghost - Documented but absent from the template.
+@csspart body - The content wrapper.
+@cssstate dismissed - Set after the close button is used.
+@fires {CustomEvent} dismiss - Emitted when the notice closes.
+@demo https://example.com/notice - Live demo.
+@author Allons-y Studio
+--->
+<div :class="tone">
+  <slot>No notice</slot>
+  <slot name="action"></slot>
+</div>

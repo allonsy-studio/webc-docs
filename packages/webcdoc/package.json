@@ -27,6 +27,14 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "ci": "yarn build",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@allons-y/webcdoc-schema": "workspace:^",
+    "comment-parser": "^1.4.9",
+    "parse5": "^8.1.0"
+  },
+  "devDependencies": {
+    "custom-elements-manifest": "^2.1.0"
   }
 }
