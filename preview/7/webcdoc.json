@@ -1,0 +1,3134 @@
+{
+  "schemaVersion": "1.0.0-beta.0",
+  "generator": "@allons-y/eleventy-plugin-webcdoc@0.1.0-beta.0",
+  "package": {
+    "name": "@allons-y/webc-docs-site",
+    "version": "0.0.0"
+  },
+  "helpers": [
+    "absoluteUrl",
+    "addPathPrefixToFullUrl",
+    "capitalize",
+    "chunk",
+    "cleanForRSS",
+    "css",
+    "currency",
+    "currentYear",
+    "dateFormat",
+    "digitsOnly",
+    "dump",
+    "excerpt",
+    "first",
+    "firstWord",
+    "getBundle",
+    "getBundleFileUrl",
+    "getCollectionItem",
+    "getCollectionItemIndex",
+    "getNextCollectionItem",
+    "getPreviousCollectionItem",
+    "groupBy",
+    "html",
+    "htmlBaseUrl",
+    "inputPathToUrl",
+    "js",
+    "jsonify",
+    "keys",
+    "last",
+    "lastWord",
+    "log",
+    "longDate",
+    "nl2br",
+    "nornAdjacent",
+    "nornCompiles",
+    "nornComponentStrings",
+    "nornHeadings",
+    "nornHook",
+    "nornIcons",
+    "nornTokenRanges",
+    "number",
+    "percent",
+    "pluck",
+    "readingTime",
+    "relativeDate",
+    "renderMarkdown",
+    "renderTransforms",
+    "reverse",
+    "shortDate",
+    "slug",
+    "slugify",
+    "sortBy",
+    "stripTags",
+    "stripWhitespace",
+    "tags",
+    "timeAgo",
+    "title",
+    "toISOString",
+    "transformWithHtmlBase",
+    "trim",
+    "url",
+    "validateURL",
+    "webcGetCss",
+    "webcGetJs",
+    "where",
+    "wordCount",
+    "year"
+  ],
+  "components": [
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-accordion.webc",
+      "tagName": "norn-accordion",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [],
+          "helpers": [],
+          "unresolved": [],
+          "webc": []
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-breadcrumbs.webc",
+      "tagName": "norn-breadcrumbs",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "label",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [
+          "norn-icon"
+        ],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [
+            {
+              "name": "index",
+              "line": 13,
+              "in": "template"
+            },
+            {
+              "name": "item",
+              "line": 14,
+              "in": "template"
+            },
+            {
+              "name": "index",
+              "line": 14,
+              "in": "template"
+            }
+          ],
+          "data": [
+            {
+              "path": "page",
+              "line": 10,
+              "in": "template"
+            }
+          ],
+          "helpers": [
+            {
+              "name": "nornComponentStrings",
+              "line": 10,
+              "in": "template"
+            }
+          ],
+          "unresolved": [
+            {
+              "name": "items",
+              "line": 9,
+              "in": "template"
+            },
+            {
+              "name": "uid",
+              "line": 9,
+              "in": "template"
+            },
+            {
+              "name": "uid",
+              "line": 10,
+              "in": "template"
+            },
+            {
+              "name": "items",
+              "line": 12,
+              "in": "template"
+            },
+            {
+              "name": "items",
+              "line": 14,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"items\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"uid\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-callout.webc",
+      "tagName": "norn-callout",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "heading",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [
+            {
+              "name": "VARIANTS",
+              "kind": "variable",
+              "description": "A known variant, else `note`."
+            },
+            {
+              "name": "kind",
+              "kind": "function",
+              "description": "A known variant, else `note`."
+            }
+          ],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [
+          "norn-icon"
+        ],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [
+            {
+              "name": "kind",
+              "line": 15,
+              "in": "template"
+            },
+            {
+              "name": "VARIANTS",
+              "line": 16,
+              "in": "template"
+            },
+            {
+              "name": "kind",
+              "line": 16,
+              "in": "template"
+            }
+          ],
+          "loops": [],
+          "data": [
+            {
+              "path": "page",
+              "line": 16,
+              "in": "template"
+            }
+          ],
+          "helpers": [
+            {
+              "name": "nornComponentStrings",
+              "line": 16,
+              "in": "template"
+            }
+          ],
+          "unresolved": [
+            {
+              "name": "variant",
+              "line": 15,
+              "in": "template"
+            },
+            {
+              "name": "variant",
+              "line": 16,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"variant\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-card-grid.webc",
+      "tagName": "norn-card-grid",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [],
+          "helpers": [],
+          "unresolved": [
+            {
+              "name": "gap",
+              "line": 9,
+              "in": "template"
+            },
+            {
+              "name": "min",
+              "line": 9,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"gap\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"min\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-card.webc",
+      "tagName": "norn-card",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [],
+          "helpers": [],
+          "unresolved": [
+            {
+              "name": "accent",
+              "line": 9,
+              "in": "template"
+            },
+            {
+              "name": "titleFace",
+              "line": 9,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"accent\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"titleFace\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-code-tabs.webc",
+      "tagName": "norn-code-tabs",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "label",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "sample",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": true,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [
+            {
+              "path": "page",
+              "line": 10,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 11,
+              "in": "template"
+            }
+          ],
+          "helpers": [
+            {
+              "name": "nornComponentStrings",
+              "line": 10,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 11,
+              "in": "template"
+            }
+          ],
+          "unresolved": [
+            {
+              "name": "uid",
+              "line": 10,
+              "in": "template"
+            },
+            {
+              "name": "group",
+              "line": 13,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"uid\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 10
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"group\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-copy-button.webc",
+      "tagName": "norn-copy-button",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "label",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        },
+        {
+          "name": "copy",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "copied",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "failed",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": true,
+        "imports": [],
+        "uses": [
+          "norn-icon"
+        ],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [
+            {
+              "path": "page",
+              "line": 11,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 12,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 13,
+              "in": "template"
+            }
+          ],
+          "helpers": [
+            {
+              "name": "nornComponentStrings",
+              "line": 11,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 12,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 13,
+              "in": "template"
+            }
+          ],
+          "unresolved": [
+            {
+              "name": "strings",
+              "line": 9,
+              "in": "template"
+            },
+            {
+              "name": "uid",
+              "line": 10,
+              "in": "template"
+            },
+            {
+              "name": "value",
+              "line": 18,
+              "in": "template"
+            },
+            {
+              "name": "source",
+              "line": 19,
+              "in": "template"
+            },
+            {
+              "name": "strings",
+              "line": 20,
+              "in": "template"
+            },
+            {
+              "name": "compact",
+              "line": 21,
+              "in": "template"
+            },
+            {
+              "name": "surface",
+              "line": 22,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"strings\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"uid\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 10
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"value\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 18
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"source\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 19
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"compact\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 21
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"surface\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-fact-list.webc",
+      "tagName": "norn-fact-list",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [],
+          "helpers": [],
+          "unresolved": [
+            {
+              "name": "gap",
+              "line": 9,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"gap\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-footer.webc",
+      "tagName": "norn-footer",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        },
+        {
+          "name": "colophon",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [],
+          "helpers": [],
+          "unresolved": [
+            {
+              "name": "width",
+              "line": 9,
+              "in": "template"
+            },
+            {
+              "name": "leadWidth",
+              "line": 9,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"width\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"leadWidth\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-head.webc",
+      "tagName": "norn-head",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [
+            {
+              "name": "SURFACE",
+              "kind": "variable",
+              "description": "The default theme colors: `surface.base` from tokens.json, written out because a `<meta>` can't read a custom property."
+            },
+            {
+              "name": "hasImage",
+              "kind": "function",
+              "description": "Whether the page sets a share image. Checked with `typeof`: a missing `og-image` prop can resolve to page data."
+            },
+            {
+              "name": "absoluteImage",
+              "kind": "function",
+              "description": "The absolute URL for `og:image`: the image resolved against the canonical URL.\nA relative image with no absolute canonical URL logs a warning and returns `''`, because Open Graph readers ignore a relative one.\nCall it once per render: it warns each time."
+            }
+          ],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null,
+          "keep": true
+        },
+        "clientScript": true,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [
+            {
+              "name": "SURFACE",
+              "line": 47,
+              "in": "template"
+            },
+            {
+              "name": "SURFACE",
+              "line": 48,
+              "in": "template"
+            },
+            {
+              "name": "absoluteImage",
+              "line": 53,
+              "in": "template"
+            }
+          ],
+          "loops": [
+            {
+              "name": "image",
+              "line": 54,
+              "in": "template"
+            },
+            {
+              "name": "image",
+              "line": 55,
+              "in": "template"
+            },
+            {
+              "name": "image",
+              "line": 56,
+              "in": "template"
+            }
+          ],
+          "data": [],
+          "helpers": [
+            {
+              "name": "title",
+              "line": 36,
+              "in": "template"
+            },
+            {
+              "name": "url",
+              "line": 38,
+              "in": "template"
+            },
+            {
+              "name": "title",
+              "line": 50,
+              "in": "template"
+            },
+            {
+              "name": "url",
+              "line": 52,
+              "in": "template"
+            },
+            {
+              "name": "url",
+              "line": 53,
+              "in": "template"
+            },
+            {
+              "name": "getBundleFileUrl",
+              "line": 58,
+              "in": "template"
+            }
+          ],
+          "unresolved": [
+            {
+              "name": "description",
+              "line": 37,
+              "in": "template"
+            },
+            {
+              "name": "themeColor",
+              "line": 46,
+              "in": "template"
+            },
+            {
+              "name": "themeColor",
+              "line": 47,
+              "in": "template"
+            },
+            {
+              "name": "themeColor",
+              "line": 48,
+              "in": "template"
+            },
+            {
+              "name": "ogTitle",
+              "line": 50,
+              "in": "template"
+            },
+            {
+              "name": "description",
+              "line": 51,
+              "in": "template"
+            },
+            {
+              "name": "ogImage",
+              "line": 53,
+              "in": "template"
+            },
+            {
+              "name": "ogImageAlt",
+              "line": 55,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"description\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 37
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"themeColor\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 46
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"ogTitle\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 50
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"ogImage\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 53
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"ogImageAlt\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-header.webc",
+      "tagName": "norn-header",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "brand",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        },
+        {
+          "name": "summary",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "label",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [
+            {
+              "path": "page",
+              "line": 12,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 13,
+              "in": "template"
+            }
+          ],
+          "helpers": [
+            {
+              "name": "nornComponentStrings",
+              "line": 12,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 13,
+              "in": "template"
+            }
+          ],
+          "unresolved": [
+            {
+              "name": "logoHeight",
+              "line": 9,
+              "in": "template"
+            },
+            {
+              "name": "uid",
+              "line": 13,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"logoHeight\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"uid\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-heading-anchor.webc",
+      "tagName": "norn-heading-anchor",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [
+            {
+              "name": "required",
+              "kind": "function",
+              "description": "The heading's id, after checking it was passed. An unpassed `slug` resolves to a helper of that name under Eleventy, so a type check comes first."
+            }
+          ],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [
+            {
+              "name": "required",
+              "line": 16,
+              "in": "template"
+            },
+            {
+              "name": "required",
+              "line": 17,
+              "in": "template"
+            },
+            {
+              "name": "required",
+              "line": 18,
+              "in": "template"
+            },
+            {
+              "name": "required",
+              "line": 19,
+              "in": "template"
+            },
+            {
+              "name": "required",
+              "line": 20,
+              "in": "template"
+            }
+          ],
+          "loops": [],
+          "data": [],
+          "helpers": [
+            {
+              "name": "slug",
+              "line": 16,
+              "in": "template"
+            },
+            {
+              "name": "slug",
+              "line": 17,
+              "in": "template"
+            },
+            {
+              "name": "slug",
+              "line": 18,
+              "in": "template"
+            },
+            {
+              "name": "slug",
+              "line": 19,
+              "in": "template"
+            },
+            {
+              "name": "slug",
+              "line": 20,
+              "in": "template"
+            }
+          ],
+          "unresolved": [
+            {
+              "name": "level",
+              "line": 16,
+              "in": "template"
+            },
+            {
+              "name": "level",
+              "line": 17,
+              "in": "template"
+            },
+            {
+              "name": "level",
+              "line": 18,
+              "in": "template"
+            },
+            {
+              "name": "level",
+              "line": 19,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"level\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-hero.webc",
+      "tagName": "norn-hero",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [],
+          "helpers": [],
+          "unresolved": [
+            {
+              "name": "width",
+              "line": 9,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"width\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-icon.webc",
+      "tagName": "norn-icon",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "label",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {
+        "returns": [
+          {
+            "name": "",
+            "description": ""
+          }
+        ],
+        "param": [
+          {
+            "name": "size",
+            "description": ""
+          }
+        ]
+      },
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [
+            {
+              "name": "RING",
+              "kind": "variable",
+              "description": "Stroke paths on a 24-unit grid, plus an optional filled path."
+            },
+            {
+              "name": "ICONS",
+              "kind": "variable",
+              "description": "Stroke paths on a 24-unit grid, plus an optional filled path."
+            },
+            {
+              "name": "MIRROR",
+              "kind": "variable",
+              "description": "The sizes, each a shared icon token."
+            },
+            {
+              "name": "SIZES",
+              "kind": "variable",
+              "description": "The sizes, each a shared icon token."
+            },
+            {
+              "name": "project",
+              "kind": "function",
+              "description": "The project's icons from the Norn plugin, by name. None without the plugin."
+            },
+            {
+              "name": "icon",
+              "kind": "function",
+              "description": "The icon for a name: a project icon, else a built-in. An unknown name fails the build rather than rendering nothing."
+            },
+            {
+              "name": "attr",
+              "kind": "function",
+              "description": "An attribute value, escaped."
+            }
+          ],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [],
+          "helpers": [
+            {
+              "name": "nornIcons",
+              "line": 49,
+              "in": "setup"
+            }
+          ],
+          "unresolved": [
+            {
+              "name": "drawing",
+              "line": 90,
+              "in": "template"
+            },
+            {
+              "name": "name",
+              "line": 90,
+              "in": "template"
+            },
+            {
+              "name": "size",
+              "line": 90,
+              "in": "template"
+            },
+            {
+              "name": "g",
+              "line": 65,
+              "in": "setup"
+            },
+            {
+              "name": "quot",
+              "line": 65,
+              "in": "setup"
+            },
+            {
+              "name": "lt",
+              "line": 65,
+              "in": "setup"
+            },
+            {
+              "name": "s",
+              "line": 72,
+              "in": "setup"
+            },
+            {
+              "name": "$",
+              "line": 73,
+              "in": "setup"
+            },
+            {
+              "name": "size",
+              "line": 73,
+              "in": "setup"
+            },
+            {
+              "name": "$",
+              "line": 74,
+              "in": "setup"
+            },
+            {
+              "name": "size",
+              "line": 74,
+              "in": "setup"
+            },
+            {
+              "name": "data",
+              "line": 83,
+              "in": "setup"
+            },
+            {
+              "name": "mirror",
+              "line": 83,
+              "in": "setup"
+            },
+            {
+              "name": "$",
+              "line": 85,
+              "in": "setup"
+            },
+            {
+              "name": "viewBox",
+              "line": 85,
+              "in": "setup"
+            },
+            {
+              "name": "$",
+              "line": 86,
+              "in": "setup"
+            },
+            {
+              "name": "fill",
+              "line": 86,
+              "in": "setup"
+            },
+            {
+              "name": "$",
+              "line": 87,
+              "in": "setup"
+            },
+            {
+              "name": "d",
+              "line": 87,
+              "in": "setup"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"drawing\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 90
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"name\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 90
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"size\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 90
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-link-button.webc",
+      "tagName": "norn-link-button",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [],
+          "helpers": [],
+          "unresolved": [
+            {
+              "name": "href",
+              "line": 9,
+              "in": "template"
+            },
+            {
+              "name": "variant",
+              "line": 9,
+              "in": "template"
+            },
+            {
+              "name": "tone",
+              "line": 9,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"href\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"variant\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"tone\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-notice.webc",
+      "tagName": "norn-notice",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "prefix",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        },
+        {
+          "name": "action",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [
+            {
+              "name": "SEVERITIES",
+              "kind": "variable",
+              "description": "A known severity, else `info`."
+            },
+            {
+              "name": "level",
+              "kind": "function",
+              "description": "A known severity, else `info`."
+            },
+            {
+              "name": "liveRole",
+              "kind": "function",
+              "description": "The live role: `alert` interrupts, for a warning or a danger; `status` waits."
+            }
+          ],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [
+          "norn-icon"
+        ],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [
+            {
+              "name": "level",
+              "line": 18,
+              "in": "template"
+            },
+            {
+              "name": "liveRole",
+              "line": 18,
+              "in": "template"
+            },
+            {
+              "name": "SEVERITIES",
+              "line": 19,
+              "in": "template"
+            },
+            {
+              "name": "level",
+              "line": 19,
+              "in": "template"
+            },
+            {
+              "name": "level",
+              "line": 21,
+              "in": "template"
+            },
+            {
+              "name": "SEVERITIES",
+              "line": 21,
+              "in": "template"
+            }
+          ],
+          "loops": [],
+          "data": [
+            {
+              "path": "page",
+              "line": 21,
+              "in": "template"
+            }
+          ],
+          "helpers": [
+            {
+              "name": "nornComponentStrings",
+              "line": 21,
+              "in": "template"
+            }
+          ],
+          "unresolved": [
+            {
+              "name": "severity",
+              "line": 18,
+              "in": "template"
+            },
+            {
+              "name": "live",
+              "line": 18,
+              "in": "template"
+            },
+            {
+              "name": "severity",
+              "line": 19,
+              "in": "template"
+            },
+            {
+              "name": "severity",
+              "line": 21,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"severity\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 18
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"live\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-pager.webc",
+      "tagName": "norn-pager",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "label",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [
+          "norn-icon"
+        ],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [
+            {
+              "path": "page",
+              "line": 10,
+              "in": "template"
+            }
+          ],
+          "helpers": [
+            {
+              "name": "nornComponentStrings",
+              "line": 10,
+              "in": "template"
+            }
+          ],
+          "unresolved": [
+            {
+              "name": "uid",
+              "line": 9,
+              "in": "template"
+            },
+            {
+              "name": "prev",
+              "line": 9,
+              "in": "template"
+            },
+            {
+              "name": "next",
+              "line": 9,
+              "in": "template"
+            },
+            {
+              "name": "uid",
+              "line": 10,
+              "in": "template"
+            },
+            {
+              "name": "prev",
+              "line": 11,
+              "in": "template"
+            },
+            {
+              "name": "next",
+              "line": 12,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"uid\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"prev\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"next\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-rich-text.webc",
+      "tagName": "norn-rich-text",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": false,
+          "reason": "root-override"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [
+          "norn-rich-text"
+        ],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [],
+          "helpers": [],
+          "unresolved": [
+            {
+              "name": "measure",
+              "line": 9,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"measure\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-search.webc",
+      "tagName": "norn-search",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "label",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "none",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "results-zero",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "results-one",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "results-two",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "results-few",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "results-many",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "results-other",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": true,
+        "imports": [],
+        "uses": [
+          "norn-icon"
+        ],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [
+            {
+              "path": "page",
+              "line": 12,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 17,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 22,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 23,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 24,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 25,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 26,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 27,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 28,
+              "in": "template"
+            }
+          ],
+          "helpers": [
+            {
+              "name": "nornComponentStrings",
+              "line": 12,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 17,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 22,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 23,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 24,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 25,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 26,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 27,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 28,
+              "in": "template"
+            }
+          ],
+          "unresolved": [
+            {
+              "name": "uid",
+              "line": 9,
+              "in": "template"
+            },
+            {
+              "name": "bundle",
+              "line": 9,
+              "in": "template"
+            },
+            {
+              "name": "action",
+              "line": 10,
+              "in": "template"
+            },
+            {
+              "name": "uid",
+              "line": 12,
+              "in": "template"
+            },
+            {
+              "name": "site",
+              "line": 16,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"uid\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"bundle\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"action\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 10
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"site\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-segmented-control.webc",
+      "tagName": "norn-segmented-control",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "legend",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [
+            {
+              "name": "grouped",
+              "kind": "function",
+              "description": "The options, after checking they come with the name that makes their radios one group."
+            },
+            {
+              "name": "unnamed",
+              "kind": "function",
+              "description": "Reached only from the `legend` slot's fallback: a group without a name fails the build."
+            }
+          ],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [
+          "norn-icon"
+        ],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [
+            {
+              "name": "unnamed",
+              "line": 22,
+              "in": "template"
+            },
+            {
+              "name": "grouped",
+              "line": 23,
+              "in": "template"
+            }
+          ],
+          "loops": [
+            {
+              "name": "option",
+              "line": 24,
+              "in": "template"
+            },
+            {
+              "name": "option",
+              "line": 25,
+              "in": "template"
+            },
+            {
+              "name": "option",
+              "line": 26,
+              "in": "template"
+            },
+            {
+              "name": "option",
+              "line": 27,
+              "in": "template"
+            }
+          ],
+          "data": [],
+          "helpers": [],
+          "unresolved": [
+            {
+              "name": "iconOnly",
+              "line": 21,
+              "in": "template"
+            },
+            {
+              "name": "options",
+              "line": 23,
+              "in": "template"
+            },
+            {
+              "name": "name",
+              "line": 23,
+              "in": "template"
+            },
+            {
+              "name": "options",
+              "line": 24,
+              "in": "template"
+            },
+            {
+              "name": "name",
+              "line": 25,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"iconOnly\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 21
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"options\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 23
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"name\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-side-nav.webc",
+      "tagName": "norn-side-nav",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "label",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "search",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [
+          "norn-icon"
+        ],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [
+            {
+              "name": "item",
+              "line": 15,
+              "in": "template"
+            },
+            {
+              "name": "item",
+              "line": 16,
+              "in": "template"
+            },
+            {
+              "name": "item",
+              "line": 17,
+              "in": "template"
+            },
+            {
+              "name": "item",
+              "line": 18,
+              "in": "template"
+            },
+            {
+              "name": "item",
+              "line": 19,
+              "in": "template"
+            },
+            {
+              "name": "child",
+              "line": 20,
+              "in": "template"
+            }
+          ],
+          "data": [
+            {
+              "path": "page",
+              "line": 10,
+              "in": "template"
+            },
+            {
+              "path": "page.url",
+              "line": 16,
+              "in": "template"
+            },
+            {
+              "path": "page.url",
+              "line": 20,
+              "in": "template"
+            }
+          ],
+          "helpers": [
+            {
+              "name": "nornComponentStrings",
+              "line": 10,
+              "in": "template"
+            }
+          ],
+          "unresolved": [
+            {
+              "name": "uid",
+              "line": 9,
+              "in": "template"
+            },
+            {
+              "name": "uid",
+              "line": 10,
+              "in": "template"
+            },
+            {
+              "name": "items",
+              "line": 13,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"uid\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"items\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-sidebar-layout.webc",
+      "tagName": "norn-sidebar-layout",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "summary",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "nav",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        },
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [
+            {
+              "path": "page",
+              "line": 14,
+              "in": "template"
+            }
+          ],
+          "helpers": [
+            {
+              "name": "nornComponentStrings",
+              "line": 14,
+              "in": "template"
+            }
+          ],
+          "unresolved": [
+            {
+              "name": "navWidth",
+              "line": 10,
+              "in": "template"
+            },
+            {
+              "name": "columns",
+              "line": 10,
+              "in": "template"
+            },
+            {
+              "name": "gap",
+              "line": 11,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"navWidth\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 10
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"columns\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 10
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"gap\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-simple-table.webc",
+      "tagName": "norn-simple-table",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "label",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        },
+        {
+          "name": "",
+          "description": "",
+          "hasFallback": false,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": true,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [],
+          "helpers": [],
+          "unresolved": [
+            {
+              "name": "uid",
+              "line": 9,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"uid\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-skip-link.webc",
+      "tagName": "norn-skip-link",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "label",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": false,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [
+            {
+              "path": "page",
+              "line": 9,
+              "in": "template"
+            }
+          ],
+          "helpers": [
+            {
+              "name": "nornComponentStrings",
+              "line": 9,
+              "in": "template"
+            }
+          ],
+          "unresolved": [
+            {
+              "name": "href",
+              "line": 9,
+              "in": "template"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"href\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-theme-toggle.webc",
+      "tagName": "norn-theme-toggle",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "label",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "light",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "system",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        },
+        {
+          "name": "dark",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": true,
+        "imports": [],
+        "uses": [
+          "norn-segmented-control"
+        ],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [
+            {
+              "path": "page",
+              "line": 18,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 21,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 22,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 23,
+              "in": "template"
+            },
+            {
+              "path": "page",
+              "line": 24,
+              "in": "template"
+            }
+          ],
+          "helpers": [
+            {
+              "name": "nornComponentStrings",
+              "line": 18,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 21,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 22,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 23,
+              "in": "template"
+            },
+            {
+              "name": "nornComponentStrings",
+              "line": 24,
+              "in": "template"
+            }
+          ],
+          "unresolved": [],
+          "webc": []
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "../node_modules/@allons-y/webc-patterns/components/norn-toc.webc",
+      "tagName": "norn-toc",
+      "summary": "",
+      "description": "/*\nSPDX-License-Identifier: MPL-2.0\nThis Source Code Form is subject to the terms of the Mozilla Public\nLicense, v. 2.0. If a copy of the MPL was not distributed with this\nfile, You can obtain one at https://mozilla.org/MPL/2.0/.\n/",
+      "props": [],
+      "attributes": [],
+      "slots": [
+        {
+          "name": "label",
+          "description": "",
+          "hasFallback": true,
+          "source": "template"
+        }
+      ],
+      "cssProperties": [],
+      "cssParts": [],
+      "cssStates": [],
+      "events": [],
+      "examples": [],
+      "demos": [],
+      "deprecated": false,
+      "tags": {},
+      "webc": {
+        "host": {
+          "rendered": true,
+          "reason": "style"
+        },
+        "setup": {
+          "exports": [
+            {
+              "name": "escape",
+              "kind": "function",
+              "description": "Renders the flat headings as nested `<li>` elements, one inner `<ol>` per level of depth."
+            }
+          ],
+          "imports": []
+        },
+        "styles": {
+          "present": true,
+          "scope": null
+        },
+        "clientScript": true,
+        "imports": [],
+        "uses": [],
+        "shadowDom": false,
+        "transforms": [],
+        "references": {
+          "props": [],
+          "setup": [],
+          "loops": [],
+          "data": [
+            {
+              "path": "page",
+              "line": 28,
+              "in": "template"
+            }
+          ],
+          "helpers": [
+            {
+              "name": "nornComponentStrings",
+              "line": 28,
+              "in": "template"
+            }
+          ],
+          "unresolved": [
+            {
+              "name": "items",
+              "line": 26,
+              "in": "template"
+            },
+            {
+              "name": "uid",
+              "line": 26,
+              "in": "template"
+            },
+            {
+              "name": "fold",
+              "line": 26,
+              "in": "template"
+            },
+            {
+              "name": "uid",
+              "line": 28,
+              "in": "template"
+            },
+            {
+              "name": "outline",
+              "line": 29,
+              "in": "template"
+            },
+            {
+              "name": "items",
+              "line": 29,
+              "in": "template"
+            },
+            {
+              "name": "g",
+              "line": 10,
+              "in": "setup"
+            }
+          ],
+          "webc": []
+        }
+      },
+      "warnings": [
+        {
+          "code": "prop-undocumented",
+          "message": "\"items\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 26
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"uid\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 26
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"fold\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 26
+        },
+        {
+          "code": "prop-undocumented",
+          "message": "\"outline\" is read in the template but is not a documented prop, setup export, loop variable, or known helper.",
+          "line": 29
+        }
+      ]
+    }
+  ],
+  "warnings": []
+}
