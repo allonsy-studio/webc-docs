@@ -6,3 +6,7 @@
 export { getComponent, getComponentByPath, listTagNames } from "./get-component.js";
 export { hasClientScript, hasWarning, isDeprecated, isDocumented, isPortable, rendersHostTag } from "./predicates.js";
 export { normalizePath } from "./paths.js";
+export { dependenciesOf, resolveUses, topologicalOrder } from "./resolve-uses.js";
+export type { DependencyOptions, UseNode } from "./resolve-uses.js";
+export { componentsUsing, hostRequirements } from "./references.js";
+export type { HostRequirement } from "./references.js";
