@@ -236,6 +236,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@allons-y/webcdoc-tools@workspace:packages/webcdoc-tools":
+  version: 0.0.0-use.local
+  resolution: "@allons-y/webcdoc-tools@workspace:packages/webcdoc-tools"
+  dependencies:
+    "@allons-y/webcdoc-schema": "workspace:^"
+  languageName: unknown
+  linkType: soft
+
 "@allons-y/webcdoc@workspace:packages/webcdoc":
   version: 0.0.0-use.local
   resolution: "@allons-y/webcdoc@workspace:packages/webcdoc"
