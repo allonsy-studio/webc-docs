@@ -3,7 +3,7 @@
  * Copyright (c) 2026 Allons-y Studio
  */
 
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { validate } from "../../../packages/webcdoc-lint/src/index.js";
 import { SITE, build } from "./helpers.js";
 
@@ -106,5 +106,20 @@ describe("examples", () => {
 		expect(find(doc, "page-card").examples[1]!.html).toContain("<h1>");
 		expect(find(doc, "site-banner").examples[0]!.html).toContain("<header>");
 		expect(validate(doc).valid).toBe(true);
+	});
+});
+
+describe("data check runs", () => {
+	it("checks $data paths without logging that the global data was unreadable", async () => {
+		const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+		try {
+			const { doc } = await build();
+			const messages = (c: string) => find(doc, c).warnings.filter((w) => w.code === "data-missing").map((w) => w.message);
+			expect(messages("site-banner")).toEqual([]);
+			expect(messages("page-card")).toEqual(["$data.site.subtitle is not in the global data."]);
+			expect(warn.mock.calls.flat().join("\n")).not.toContain("Global data could not be read");
+		} finally {
+			warn.mockRestore();
+		}
 	});
 });
