@@ -15,9 +15,9 @@
     "site"
   ],
   "scripts": {
-    "build": "yarn workspaces foreach -A --topological run build",
+    "build": "yarn workspaces foreach -A --topological-dev run build",
     "changeset": "changeset",
-    "ci": "yarn workspaces foreach -A --topological run ci",
+    "ci": "yarn workspaces foreach -A --topological-dev run ci",
     "format": "opx lint --fix",
     "lint": "opx lint",
     "prepare": "husky",
