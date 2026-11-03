@@ -30,6 +30,7 @@ export default function (eleventyConfig) {
 		props: (data) => ({
 			...ossProps(data.site, data.project, { docs: docsOf(data), anchors: data.anchors === true }),
 			title: data.title,
+			description: data.description ?? data.site?.description,
 			docs: docsOf(data),
 		}),
 	});
