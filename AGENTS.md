@@ -11,17 +11,21 @@ covers this repository only.
 - TypeScript 5 with `tsc` emitting `dist/` and declarations
 - Vitest for tests
 - opx (`@allons-y/opx-cli`, `opx-lint-js`, `opx-lint-json`, `opx-lint-md`) for lint and format
+- `@allons-y/opx-release` (`opx release`, which wraps Changesets) for versions and publishing
 
 ## Commands
 
-| Command          | Purpose                                                      |
-| ---------------- | ------------------------------------------------------------ |
-| `yarn install`   | Install dependencies (run `corepack enable` first)           |
-| `yarn lint`      | Lint JS, TS, JSON, and Markdown via `opx lint`               |
-| `yarn format`    | Apply lint fixes via `opx lint --fix`                        |
-| `yarn build`     | Build every workspace in dependency order                    |
-| `yarn typecheck` | Type-check `src` and `test` in every workspace (build first) |
-| `yarn test`      | Run Vitest in every workspace                                |
+| Command                 | Purpose                                                      |
+| ----------------------- | ------------------------------------------------------------ |
+| `yarn install`          | Install dependencies (run `corepack enable` first)           |
+| `yarn lint`             | Lint JS, TS, JSON, and Markdown via `opx lint`               |
+| `yarn format`           | Apply lint fixes via `opx lint --fix`                        |
+| `yarn build`            | Build every workspace in dependency order                    |
+| `yarn typecheck`        | Type-check `src` and `test` in every workspace (build first) |
+| `yarn test`             | Run Vitest in every workspace                                |
+| `yarn opx release add`  | Record a change for the next release                         |
+| `yarn version-packages` | Bump versions, write changelogs, refresh the lockfile        |
+| `yarn release`          | Build, then publish packages not yet on the registry         |
 
 Run one workspace's tests from the repository root with
 `yarn vitest run --project <name>`, for example
