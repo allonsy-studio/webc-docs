@@ -23,15 +23,16 @@ covers this repository only.
 | `yarn build`            | Build every workspace in dependency order                    |
 | `yarn typecheck`        | Type-check `src` and `test` in every workspace (build first) |
 | `yarn test`             | Run Vitest in every workspace                                |
-| `yarn opx release add`  | Record a change for the next release                         |
-| `yarn version-packages` | Bump versions, write changelogs, refresh the lockfile        |
+| `yarn changeset`        | Record a change for the next release                         |
+| `yarn run version`      | Bump versions, write changelogs, refresh the lockfile        |
 | `yarn release`          | Build, then publish packages not yet on the registry         |
 
 Run one workspace's tests from the repository root with
 `yarn vitest run --project <name>`, for example
 `yarn vitest run --project @allons-y/webcdoc`. Add `-u` to update snapshots.
 `yarn workspace <name> run test` does not work, because `vitest` is declared only at the
-root.
+root. Likewise `yarn version` is Yarn's own command, so the version script runs as
+`yarn run version`.
 
 ## Layout
 

@@ -16,6 +16,7 @@
   ],
   "scripts": {
     "build": "yarn workspaces foreach -A --topological run build",
+    "changeset": "opx release add",
     "ci": "yarn workspaces foreach -A --topological run ci",
     "format": "opx lint --fix",
     "lint": "opx lint",
@@ -23,7 +24,7 @@
     "release": "yarn build && opx release publish",
     "test": "yarn workspaces foreach -A run test",
     "typecheck": "tsc -p tsconfig.test.json",
-    "version-packages": "opx release version && yarn install --mode update-lockfile"
+    "version": "opx release version && yarn install --mode update-lockfile"
   },
   "devDependencies": {
     "@allons-y/opx-cli": "^0.1.0-beta.0",
