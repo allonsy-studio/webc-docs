@@ -7,7 +7,7 @@ covers this repository only.
 
 ## Stack
 
-- Yarn 4 (`nodeLinker: node-modules`), Node 24 (see `.nvmrc`), ESM only
+- Yarn 4 (`nodeLinker: node-modules`), Node 26 (see `.nvmrc`; 24 is the oldest supported, and CI tests both), ESM only
 - TypeScript 5 with `tsc` emitting `dist/` and declarations
 - Vitest for tests
 - opx (`@allons-y/opx-cli`, `opx-lint-js`, `opx-lint-json`, `opx-lint-md`) for lint and format
