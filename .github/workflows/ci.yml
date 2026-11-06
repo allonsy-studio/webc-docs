@@ -17,9 +17,9 @@ jobs:
       matrix:
         include:
           # The version in .nvmrc, plus the oldest supported (engines.node).
-          - label: .nvmrc
+          - label: 26
             node-version-file: .nvmrc
-          - label: Node 24
+          - label: 24
             node-version: 24
     steps:
       - name: Checkout repository
