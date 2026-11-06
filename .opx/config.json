@@ -4,5 +4,6 @@
 		"js": "./eslint.config.js",
 		"json": "./eslint.config.js",
 		"md": "./eslint.config.js"
-	}
+	},
+	"release": true
 }

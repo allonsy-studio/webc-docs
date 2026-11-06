@@ -29,6 +29,6 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@allons-y/webcdoc-schema": "workspace:^"
+    "@allons-y/webcdoc-schema": "^1.0.0-beta.0"
   }
 }
