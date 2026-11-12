@@ -10,7 +10,7 @@ covers this repository only.
 - Yarn 4 (`nodeLinker: node-modules`), Node 26 (see `.nvmrc`; 24 is the oldest supported, and CI tests both), ESM only
 - TypeScript 5 with `tsc` emitting `dist/` and declarations
 - Vitest for tests
-- opx (`@allons-y/opx-cli`, `opx-lint-js`, `opx-lint-json`, `opx-lint-md`) for lint and format
+- opx (`@allons-y/opx-cli`, `opx-lint-js`, `opx-lint-ts`, `opx-lint-json`, `opx-lint-md`) for lint and format
 - `@allons-y/opx-release` (`opx release`, which wraps Changesets) for versions and publishing
 
 ## Commands
