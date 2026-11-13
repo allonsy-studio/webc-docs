@@ -210,7 +210,7 @@ __metadata:
     "@11ty/eleventy": "npm:^3.1.8"
     "@11ty/eleventy-plugin-webc": "npm:^0.11.2"
     "@11ty/webc": "npm:^0.11.4"
-    "@allons-y/webcdoc": "npm:^0.1.0-beta.0"
+    "@allons-y/webcdoc": "npm:^0.1.0"
   peerDependencies:
     "@11ty/eleventy": ^3.0.0
     "@11ty/webc": ^0.11.0
@@ -326,34 +326,34 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@allons-y/webcdoc-lint@workspace:packages/webcdoc-lint"
   dependencies:
-    "@allons-y/webcdoc": "npm:^0.1.0-beta.0"
-    "@allons-y/webcdoc-schema": "npm:^1.0.0-beta.0"
-    "@allons-y/webcdoc-tools": "npm:^0.1.0-beta.0"
+    "@allons-y/webcdoc": "npm:^0.1.0"
+    "@allons-y/webcdoc-schema": "npm:^1.0.0"
+    "@allons-y/webcdoc-tools": "npm:^0.1.0"
     "@cfworker/json-schema": "npm:^4.1.4"
   bin:
     webcdoc-lint: ./dist/bin/cli.js
   languageName: unknown
   linkType: soft
 
-"@allons-y/webcdoc-schema@npm:^1.0.0-beta.0, @allons-y/webcdoc-schema@workspace:packages/webcdoc-schema":
+"@allons-y/webcdoc-schema@npm:^1.0.0, @allons-y/webcdoc-schema@workspace:packages/webcdoc-schema":
   version: 0.0.0-use.local
   resolution: "@allons-y/webcdoc-schema@workspace:packages/webcdoc-schema"
   languageName: unknown
   linkType: soft
 
-"@allons-y/webcdoc-tools@npm:^0.1.0-beta.0, @allons-y/webcdoc-tools@workspace:packages/webcdoc-tools":
+"@allons-y/webcdoc-tools@npm:^0.1.0, @allons-y/webcdoc-tools@workspace:packages/webcdoc-tools":
   version: 0.0.0-use.local
   resolution: "@allons-y/webcdoc-tools@workspace:packages/webcdoc-tools"
   dependencies:
-    "@allons-y/webcdoc-schema": "npm:^1.0.0-beta.0"
+    "@allons-y/webcdoc-schema": "npm:^1.0.0"
   languageName: unknown
   linkType: soft
 
-"@allons-y/webcdoc@npm:^0.1.0-beta.0, @allons-y/webcdoc@workspace:packages/webcdoc":
+"@allons-y/webcdoc@npm:^0.1.0, @allons-y/webcdoc@workspace:packages/webcdoc":
   version: 0.0.0-use.local
   resolution: "@allons-y/webcdoc@workspace:packages/webcdoc"
   dependencies:
-    "@allons-y/webcdoc-schema": "npm:^1.0.0-beta.0"
+    "@allons-y/webcdoc-schema": "npm:^1.0.0"
     comment-parser: "npm:^1.4.9"
     custom-elements-manifest: "npm:^2.1.0"
     parse5: "npm:^8.1.0"
