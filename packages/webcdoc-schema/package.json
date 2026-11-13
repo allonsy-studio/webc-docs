@@ -1,6 +1,6 @@
 {
   "name": "@allons-y/webcdoc-schema",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0",
   "description": "TypeScript types and JSON Schema for the JSON that @allons-y/webcdoc produces.",
   "license": "MPL-2.0",
   "author": "Cassondra Roberts <1840295+castastrophe@users.noreply.github.com> (https://allons-y.studio)",

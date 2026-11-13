@@ -1,6 +1,6 @@
 {
   "name": "@allons-y/webcdoc-tools",
-  "version": "0.1.0-beta.0",
+  "version": "0.1.0",
   "description": "Pure helpers for reading, filtering, and ordering the components in a webcdoc document.",
   "license": "MPL-2.0",
   "author": "Cassondra Roberts <1840295+castastrophe@users.noreply.github.com> (https://allons-y.studio)",
@@ -29,6 +29,6 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@allons-y/webcdoc-schema": "^1.0.0-beta.0"
+    "@allons-y/webcdoc-schema": "^1.0.0"
   }
 }
