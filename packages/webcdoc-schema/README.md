@@ -17,7 +17,7 @@ import type { ComponentRecord, WebcdocDocument, Warning } from "@allons-y/webcdo
 
 The JSON Schema (draft 2020-12) is exported as `@allons-y/webcdoc-schema/schema.json`. Its `$id` is `https://allons-y.studio/schemas/webcdoc/1.0.0.json`.
 
-`SCHEMA_VERSION` equals this package's version and is written to `schemaVersion` in every document.
+`SCHEMA_VERSION` is read from this package's `package.json` and is written to `schemaVersion` in every document.
 
 ## Warning codes
 

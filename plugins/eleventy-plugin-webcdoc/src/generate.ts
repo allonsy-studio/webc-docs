@@ -4,14 +4,15 @@
  */
 
 import { readFile } from "node:fs/promises";
+import pkgJson from "../package.json" with { type: "json" };
 import { parseAll } from "@allons-y/webcdoc";
 import type { ComponentRecord, WebcdocDocument } from "@allons-y/webcdoc";
 import { hasPath } from "./data.js";
 import { renderExamples } from "./examples.js";
 import { importExists, lineOf } from "./imports.js";
 
-/** Package version, kept in step with package.json. */
-export const VERSION = "0.1.0-beta.0";
+/** Package version, read from `package.json`. */
+export const VERSION = pkgJson.version;
 
 export interface GenerateInput {
 	/** Component globs, already expanded. */

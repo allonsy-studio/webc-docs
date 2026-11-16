@@ -3,8 +3,10 @@
  * Copyright (c) 2026 Allons-y Studio
  */
 
-/** Version of the document format; tracks this package's version. */
-export const SCHEMA_VERSION = "1.0.0-beta.0";
+import pkgJson from "../package.json" with { type: "json" };
+
+/** Version of the document format; read from this package's `package.json`. */
+export const SCHEMA_VERSION = pkgJson.version;
 
 /** Documentation tags the parser knows. Other tags land in `tags`. */
 export type TagName =
