@@ -1,6 +1,6 @@
 {
   "name": "@allons-y/eleventy-plugin-webcdoc",
-  "version": "0.1.0-beta.0",
+  "version": "0.1.0",
   "description": "Eleventy plugin that generates webcdoc documentation for WebC components, with the host's helpers and data in view.",
   "license": "MPL-2.0",
   "author": "Cassondra Roberts <1840295+castastrophe@users.noreply.github.com> (https://allons-y.studio)",
@@ -38,7 +38,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@allons-y/webcdoc": "^0.1.0-beta.0"
+    "@allons-y/webcdoc": "^0.1.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.8",

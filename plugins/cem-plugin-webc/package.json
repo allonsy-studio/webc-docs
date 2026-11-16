@@ -1,6 +1,6 @@
 {
   "name": "@allons-y/cem-plugin-webc",
-  "version": "0.1.0-beta.0",
+  "version": "0.1.0",
   "description": "Custom Elements Manifest analyzer plugin for WebC components.",
   "license": "MPL-2.0",
   "author": "Cassondra Roberts <1840295+castastrophe@users.noreply.github.com> (https://allons-y.studio)",
