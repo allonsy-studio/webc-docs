@@ -65,6 +65,7 @@ Layout, naming, and techniques follow the org's
 
 ## Commits & attribution
 
+- Pull requests are squash-merged: the PR title becomes the commit subject & the commit messages its body, so the title must be a valid Conventional Commits subject.
 - Conventional Commits with lowercase, imperative subjects and no trailing period.
 - Commit author and committer: `Cassondra Roberts <1840295+castastrophe@users.noreply.github.com>`.
 - No AI attribution in commits, PRs, or comments: no `Co-Authored-By` trailers, no
