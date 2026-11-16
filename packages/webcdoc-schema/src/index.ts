@@ -3,8 +3,12 @@
  * Copyright (c) 2026 Allons-y Studio
  */
 
-/** Version of the document format; tracks this package's version. */
-export const SCHEMA_VERSION = "1.0.0-beta.0";
+import { createRequire } from "node:module";
+
+const { version } = createRequire(import.meta.url)("../package.json") as { version: string };
+
+/** Version of the document format; read from this package's `package.json`. */
+export const SCHEMA_VERSION = version;
 
 /** Documentation tags the parser knows. Other tags land in `tags`. */
 export type TagName =

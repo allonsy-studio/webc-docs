@@ -3,5 +3,9 @@
  * Copyright (c) 2026 Allons-y Studio
  */
 
-/** Package version, kept in step with package.json. */
-export const VERSION = "0.1.0-beta.0";
+import { createRequire } from "node:module";
+
+const { version } = createRequire(import.meta.url)("../package.json") as { version: string };
+
+/** Package version, read from `package.json`. */
+export const VERSION = version;

@@ -13,6 +13,10 @@ describe("schema package", () => {
 	it("keeps the version constant in step with package.json", () => {
 		expect(SCHEMA_VERSION).toBe(read("../package.json").version);
 	});
+	it("keeps the schema $id on the package's release version", () => {
+		const base = read("../package.json").version.split("-")[0];
+		expect(read("../schema.json").$id).toBe(`https://allons-y.studio/schemas/webcdoc/${base}.json`);
+	});
 	it("lists every warning code", () => {
 		const defs = read("../schema.json").$defs;
 		expect(defs.warning.properties.code.enum).toContain("prop-undocumented");
