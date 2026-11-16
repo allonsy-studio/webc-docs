@@ -3,9 +3,7 @@
  * Copyright (c) 2026 Allons-y Studio
  */
 
-import { createRequire } from "node:module";
-
-const { version } = createRequire(import.meta.url)("../package.json") as { version: string };
+import pkgJson from "../package.json" with { type: "json" };
 
 /** Package version, read from `package.json`. */
-export const VERSION = version;
+export const VERSION = pkgJson.version;

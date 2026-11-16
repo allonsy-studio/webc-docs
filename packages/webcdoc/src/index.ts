@@ -5,7 +5,7 @@
 
 import { existsSync, readFileSync } from "node:fs";
 import { glob, readFile } from "node:fs/promises";
-import { createRequire } from "node:module";
+import pkgJson from "../package.json" with { type: "json" };
 import { isAbsolute, relative, resolve } from "node:path";
 import { SCHEMA_VERSION } from "@allons-y/webcdoc-schema";
 import type { ComponentRecord, PackageWarning, WebcdocDocument } from "@allons-y/webcdoc-schema";
@@ -18,10 +18,8 @@ export { SCHEMA_VERSION } from "@allons-y/webcdoc-schema";
 export { DEFAULT_HELPERS } from "./references.js";
 export { getCustomElements, isCustomElementDeclaration, isCustomElementExport, normalizeModulePath, toManifest } from "./emit/cem.js";
 
-const { version } = createRequire(import.meta.url)("../package.json") as { version: string };
-
 /** Package version, read from `package.json`. */
-export const VERSION = version;
+export const VERSION = pkgJson.version;
 
 export interface ParseOptions {
 	/** Path recorded on the record; the file name gives the default tag name. */

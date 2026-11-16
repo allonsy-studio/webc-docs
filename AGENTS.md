@@ -61,6 +61,7 @@ Layout, naming, and techniques follow the org's
   from `.license-header.js`.
 - Code comments are short JSDoc. Explanations belong in commit bodies and docs.
 - Use US spelling in code, docs, and file names.
+- Read `package.json` with a JSON import (`import pkgJson from "../package.json" with { type: "json" };`), not `createRequire` or `readFileSync`. Everything here is ESM.
 
 ## Commits & attribution
 

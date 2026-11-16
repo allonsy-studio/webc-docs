@@ -3,12 +3,10 @@
  * Copyright (c) 2026 Allons-y Studio
  */
 
-import { createRequire } from "node:module";
-
-const { version } = createRequire(import.meta.url)("../package.json") as { version: string };
+import pkgJson from "../package.json" with { type: "json" };
 
 /** Version of the document format; read from this package's `package.json`. */
-export const SCHEMA_VERSION = version;
+export const SCHEMA_VERSION = pkgJson.version;
 
 /** Documentation tags the parser knows. Other tags land in `tags`. */
 export type TagName =

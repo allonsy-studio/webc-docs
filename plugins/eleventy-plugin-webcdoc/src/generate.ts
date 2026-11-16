@@ -4,17 +4,15 @@
  */
 
 import { readFile } from "node:fs/promises";
-import { createRequire } from "node:module";
+import pkgJson from "../package.json" with { type: "json" };
 import { parseAll } from "@allons-y/webcdoc";
 import type { ComponentRecord, WebcdocDocument } from "@allons-y/webcdoc";
 import { hasPath } from "./data.js";
 import { renderExamples } from "./examples.js";
 import { importExists, lineOf } from "./imports.js";
 
-const { version } = createRequire(import.meta.url)("../package.json") as { version: string };
-
 /** Package version, read from `package.json`. */
-export const VERSION = version;
+export const VERSION = pkgJson.version;
 
 export interface GenerateInput {
 	/** Component globs, already expanded. */
