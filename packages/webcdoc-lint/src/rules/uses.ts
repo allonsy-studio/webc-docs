@@ -3,7 +3,7 @@
  * Copyright (c) 2026 Allons-y Studio
  */
 
-import { getComponent, isDeprecated, resolveUses } from "@allons-y/webcdoc-tools";
+import { getComponent, isDeprecated, resolveUses } from "../tools/index.js";
 import type { WebcdocDocument } from "@allons-y/webcdoc-schema";
 import type { ComponentRule } from "./rule.js";
 

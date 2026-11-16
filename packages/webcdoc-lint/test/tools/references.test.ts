@@ -4,7 +4,7 @@
  */
 
 import { describe, expect, it } from "vitest";
-import { componentsUsing, hostRequirements } from "../src/index.js";
+import { componentsUsing, hostRequirements } from "../../src/tools/index.js";
 import { makeDocument, makeRecord } from "./helpers.js";
 
 const dataRef = (path: string) => ({ path, line: 1, in: "template" as const });

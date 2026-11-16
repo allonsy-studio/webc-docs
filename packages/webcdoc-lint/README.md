@@ -79,7 +79,7 @@ Pretty output prints one line per problem as `path:line rule message`, then a su
 ## Requirements
 
 - Node 24 or later.
-- `@allons-y/webcdoc-schema` and `@allons-y/webcdoc-tools` are installed with this package.
+- `@allons-y/webcdoc-schema` is installed with this package.
 
 ## License
 

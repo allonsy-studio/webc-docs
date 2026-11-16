@@ -4,7 +4,7 @@
  */
 
 import { describe, expect, it } from "vitest";
-import { hasClientScript, hasWarning, isDeprecated, isDocumented, isPortable, rendersHostTag } from "../src/index.js";
+import { hasClientScript, hasWarning, isDeprecated, isDocumented, isPortable, rendersHostTag } from "../../src/tools/index.js";
 import { makeRecord } from "./helpers.js";
 
 describe("isDocumented", () => {

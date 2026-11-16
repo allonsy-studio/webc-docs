@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "@allons-y/webcdoc-schema": "^1.0.0",
-    "@allons-y/webcdoc-tools": "^0.1.0",
     "@cfworker/json-schema": "^4.1.4"
   },
   "devDependencies": {

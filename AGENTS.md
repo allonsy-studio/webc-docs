@@ -38,7 +38,6 @@ root. Likewise `yarn version` is Yarn's own command, so the version script runs 
 
 - `packages/webcdoc`: `@allons-y/webcdoc`, the parser, CLI, and manifest adapter
 - `packages/webcdoc-schema`: `@allons-y/webcdoc-schema`, the record types and JSON Schema
-- `packages/webcdoc-tools`: `@allons-y/webcdoc-tools`, pure helpers for filtering, looking up, and ordering components
 - `packages/webcdoc-lint`: `@allons-y/webcdoc-lint`, the documentation linter and its rules
 - `plugins/eleventy-plugin-webcdoc`: `@allons-y/eleventy-plugin-webcdoc`, the Eleventy plugin that generates the document inside the build
 - `plugins/cem-plugin-webc`: `@allons-y/cem-plugin-webc`, the Custom Elements Manifest plugin

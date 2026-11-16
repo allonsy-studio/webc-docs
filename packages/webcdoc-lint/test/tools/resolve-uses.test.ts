@@ -4,7 +4,7 @@
  */
 
 import { describe, expect, it } from "vitest";
-import { dependenciesOf, resolveUses, topologicalOrder } from "../src/index.js";
+import { dependenciesOf, resolveUses, topologicalOrder } from "../../src/tools/index.js";
 import { cyclicDocument, makeDocument, makeRecord, sampleDocument } from "./helpers.js";
 
 describe("resolveUses", () => {

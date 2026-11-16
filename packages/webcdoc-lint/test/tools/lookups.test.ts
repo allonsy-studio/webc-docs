@@ -4,7 +4,7 @@
  */
 
 import { describe, expect, it } from "vitest";
-import { getComponent, getComponentByPath, listTagNames, normalizePath } from "../src/index.js";
+import { getComponent, getComponentByPath, listTagNames, normalizePath } from "../../src/tools/index.js";
 import { makeDocument, makeRecord, sampleDocument } from "./helpers.js";
 
 describe("normalizePath", () => {
