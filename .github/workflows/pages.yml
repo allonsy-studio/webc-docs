@@ -12,6 +12,6 @@ permissions:
 
 jobs:
   pages:
-    uses: allonsy-studio/.github/.github/workflows/pages.yml@main
+    uses: allonsy-studio/.github/.github/workflows/pages.yml@e8a12c59a181a3d84f4b9f0776c17f94ac88ff35 # main
     with:
       output-dir: site/_site
